@@ -9,12 +9,13 @@ import Foundation
 import Combine
 
 final class SignInViewModel: SignInViewModelProtocol {
-    
     @Published var email = ""
     @Published var password = ""
     @Published var isValidEmail = false
     @Published var isValidPassword = false
     @Published var isLoading: Bool = false
+    let userManager = UserStateManager.shared
+    
     var passwordPrompt: String? {
         if isValidPassword || self.password.isEmpty { return nil }
         return "Пароль должен быть не меньше 8 символов"
@@ -24,7 +25,7 @@ final class SignInViewModel: SignInViewModelProtocol {
         return "Почта введена не корректно. Введите по шаблону: test@test.com"
     }
     func trySignIn() {
-        
+        userManager.userState = .authorized
     }
     func cleanData() {
         email = ""

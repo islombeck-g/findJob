@@ -49,14 +49,16 @@ struct SignInEnterDataForm: View {
                 Spacer().frame(height: 20)
                 
                 Button {
-                    self.action()
+                    withAnimation {
+                        self.action()
+                    }
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
                             .frame(height: 50)
                             .foregroundColor(Color("AccentColor"))
                         
-                        Text(LocalizedStringKey("Регистрация"))
+                        Text(LocalizedStringKey("Войти"))
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                     }

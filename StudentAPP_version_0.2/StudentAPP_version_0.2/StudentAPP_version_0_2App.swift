@@ -10,9 +10,16 @@ import Firebase
 
 @main
 struct StudentAPP_version_0_2App: App {
+    
+    @StateObject var userStateManager = UserStateManager.shared
+
     var body: some Scene {
         WindowGroup {
-            ViewFactory.build(.introductionView)
+            if UserStateManager.shared.userState == .authorized {
+                ViewFactory.build(.tabView)
+            } else {
+                ViewFactory.build(.introductionView)
+            }
         }
     }
 }

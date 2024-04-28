@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct IntroductionView: View {
+    @StateObject var userStateManager = UserStateManager.shared
+    @State private var shouldNavigateToTabView = false
     var body: some View {
         NavigationStack {
+            
             ZStack {
                 Color("ForegroundColor")
                     .ignoresSafeArea()
@@ -68,3 +71,5 @@ struct IntroductionView: View {
 #Preview {
     IntroductionView()
 }
+
+

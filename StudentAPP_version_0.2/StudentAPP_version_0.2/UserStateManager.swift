@@ -15,10 +15,11 @@ final class UserStateManager: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: UserAuthData?
     @Published var isLoading = false
+    @Published var userState: IntroductionViewState = .notAuthorized
     
     init(){
-        self.userSession = Auth.auth().currentUser
-        Task {await fetchUser()}
+//        self.userSession = Auth.auth().currentUser
+//        Task { await fetchUser() }
     }
     
     private func fetchUser() async {
@@ -71,4 +72,8 @@ struct UserAuthData: Codable {
     let id: String
     let name: String
     let email: String
+}
+enum IntroductionViewState {
+    case authorized
+    case notAuthorized
 }

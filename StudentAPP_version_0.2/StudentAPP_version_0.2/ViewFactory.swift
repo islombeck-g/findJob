@@ -16,20 +16,25 @@ struct ViewFactory {
     }
     
     enum ProfileModule {
-        case main
+        case profile
         case cv
     }
     
     enum MainModule {
         case vacancyList
         case vacancyDetail
+        case tabView
+    }
+    
+    enum ResponseModule {
+        case response
     }
     
     @ViewBuilder static func build(_ module: AuthModule) -> some View {
         switch module {
-        case let .introductionView:
+        case .introductionView:
             IntroductionViewBuilder.build()
-        case let .createAccount:
+        case .createAccount:
             CreateAccountViewBuilder.build()
         case .signIn:
             SignInViewBuilder.build()
@@ -38,27 +43,47 @@ struct ViewFactory {
     
     @ViewBuilder static func build(_ module: ProfileModule) -> some View {
         switch module {
-        case let main: 
-            EmptyView()
-        case let cv:
+        case .profile:
+            ProfileViewBuilder.build()
+        case .cv:
             EmptyView()
         }
     }
  
     @ViewBuilder static func build(_ module: MainModule) -> some View {
         switch module {
-        case let vacancyList:
+        case .vacancyList:
+            VacancyBoardViewBuilder.build()
+        case .vacancyDetail:
             EmptyView()
-        case let vacancyDetail:
-            EmptyView()
+        case .tabView:
+            MainTabViewBuilder.build()
         }
     }
     
+    @ViewBuilder static func build(_ module: ResponseModule) -> some View {
+        switch module {
+        case .response:
+            ResponseViewBuilder.build()
+        }
+    }
 }
 
 
 
-enum IntroductionViewState {
-    case authorized
-    case notAuthorized
-}
+
+
+//    .onChange(of: userStateManager.userState) { newValue in
+//                if userStateManager.userState == .authorized {
+//                    shouldNavigateToTabView = true // Update the state variable
+//                    print(userStateManager.userState)
+//                }
+//            }
+//            .background(
+//                NavigationLink(
+//                    destination: ViewFactory.build(.tabView),
+//                    isActive: $shouldNavigateToTabView,
+//                    label: { EmptyView() }
+//                )
+//                .isDetailLink(false)
+//            )

@@ -82,11 +82,9 @@ struct SignInView<ViewModel>: View where ViewModel: SignInViewModelProtocol {
                 }
             }
             .scrollIndicators(.hidden)
-            
             if viewModel.isLoading {
                 ProgressView()
             }
-            
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
