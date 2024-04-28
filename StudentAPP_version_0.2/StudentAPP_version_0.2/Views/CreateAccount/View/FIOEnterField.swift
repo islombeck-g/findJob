@@ -21,18 +21,20 @@ struct FIOEnterField: View {
                     .foregroundStyle(Color("SecondaryColor"))
                 
                 VStack(alignment: .center) {
-                    Title1Text(color: Color("ForegroundColor"),
-                               text: "Личные данные")
+                    Text(Localizable.personalInformation.localized)
+                        .foregroundStyle(Color("ForegroundColor"))
+                        .font(.system(size: 34))
+                        .bold()
                     
                     MainTextField(result: $firstName,
                                   isSecureField: false,
-                                  text: "Имя*")
+                                  text: Localizable.firstName.localized + "*")
                     MainTextField(result: $secondName,
                                   isSecureField: false,
-                                  text: "Фамилия*")
+                                  text: Localizable.lastName.localized + "*")
                     MainTextField(result: $patronymicName,
                                   isSecureField: false,
-                                  text: "Отчество*")
+                                  text: Localizable.middleName.localized + "*")
                     
                     Spacer()
                         .frame(height: 20)
@@ -51,8 +53,7 @@ struct FIOEnterField: View {
                                     height: 46)
                                 .frame(maxWidth: .infinity)
                                 .foregroundColor(Color("AccentColor"))
-                            
-                            Title4Text(color: .white, text: "Далее")
+                            Title4Text(color: .white, text: Localizable.next.localized)
                         }
                     }
                 }

@@ -17,4 +17,5 @@ struct DataConstants {
         .init(title: "Казанский Национальный Иследовательский Технический Университет"),
         .init(title: "Казанский государственный медицинский университет"),
         .init(title: "Российский исламский институтка")]
+    static let emptyUserData  = UserData(userAuthData: UserAuthData(id: "", email: ""), firstName: "", secondName: "", patronymicName: "", birthDate: "", university: "", institute: "", phoneNumber: "", aboutMe: "", gender: .male, city: "", direction: "")
 }

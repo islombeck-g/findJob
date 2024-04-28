@@ -9,12 +9,12 @@ import Foundation
 import SwiftUI
 
 struct Title4Text: View {
-    private let alignment: TextAlignment
+    private let alignment: Alignment
     private let color: Color
     private let text: String
     private let spacing: CGFloat
     
-    init(alignment: TextAlignment = .leading,
+    init(alignment: Alignment = .center,
          color: Color = Color("SecondaryColor"),
          text: String) {
         let size: CGFloat = 16
@@ -27,10 +27,10 @@ struct Title4Text: View {
     var body: some View {
         Text(text)
             .kerning(0.2)
-            .multilineTextAlignment(alignment)
             .lineSpacing(spacing)
             .padding(.vertical, spacing / 2)
             .foregroundStyle(color)
             .bold()
+            .frame(maxWidth: .infinity, alignment: alignment)
     }
 }

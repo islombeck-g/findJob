@@ -17,14 +17,12 @@ struct SignInView<ViewModel>: View where ViewModel: SignInViewModelProtocol {
                 .ignoresSafeArea()
             
             ScrollView {
-                
                 VStack(alignment: .leading){
-                    
                     Group {
                         Spacer()
                             .frame(height: 37.5)
                         
-                        CustomSizeText(color: Color("SecondaryColor"), text: "Вход", size: 38)
+                        CustomSizeText(color: Color("SecondaryColor"), text: Localizable.login.localized, size: 38)
                             .padding(.horizontal, 16)
                         
                         Spacer()
@@ -43,9 +41,7 @@ struct SignInView<ViewModel>: View where ViewModel: SignInViewModelProtocol {
                     Spacer()
                         .frame(height: 24)
                     
-                    Text(LocalizedStringKey("Войти с помощью"))
-                        .foregroundStyle(Color("SecondaryColor"))
-                        .frame(maxWidth: .infinity)
+                    Title4Text(alignment: .center, text: Localizable.logInWith.localized)
                     
                     Button {
                         

@@ -50,7 +50,7 @@ struct ProfileView: View {
                             .foregroundStyle(Color("SecondaryColor"))
                         Menu {
                             Button{
-                                //                            EditAccountSCREEN()
+//                                                            EditAccountSCREEN()
                                 //                                .environmentObject(self.viewModel)
                             }label:{
                                 Text("Редактировать профиль")

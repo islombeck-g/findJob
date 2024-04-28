@@ -54,10 +54,9 @@ struct ProfileView<ViewModel>: View where ViewModel: ProfileViewModelProtol {
                                 .fontWeight(.bold)
                                 .foregroundStyle(Color("SecondaryColor"))
                             Menu {
-                                Button{
-                                    //                            EditAccountSCREEN()
-                                    //                                .environmentObject(self.viewModel)
-                                }label:{
+                                NavigationLink {
+                                    EditAccountInfoView(user: viewModel.userData ?? DataConstants.emptyUserData)
+                                } label: {
                                     Text("Редактировать профиль")
                                 }
                                 
@@ -65,7 +64,7 @@ struct ProfileView<ViewModel>: View where ViewModel: ProfileViewModelProtol {
                                 
                                 Button(role: .destructive) {
                                     //                                    self.deleteAcount_isAllertShow.toggle()
-                                }label:{
+                                } label: {
                                     Text("Удалить аккаунт")
                                 }
                             } label: {

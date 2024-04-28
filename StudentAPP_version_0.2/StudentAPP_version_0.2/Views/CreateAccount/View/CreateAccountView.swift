@@ -37,7 +37,9 @@ struct CreateAccountView<ViewModel>: View where ViewModel: CreateAccountViewMode
                 Spacer()
                     .frame(height: 37.5)
                 
-                CustomSizeText(color: Color("SecondaryColor"), text: "Регистрация", size: 38)
+                CustomSizeText(alignment: .leading,
+                               color: Color("SecondaryColor"),
+                               text: "Регистрация", size: 38)
                     .padding(.horizontal, 16)
                 
                 

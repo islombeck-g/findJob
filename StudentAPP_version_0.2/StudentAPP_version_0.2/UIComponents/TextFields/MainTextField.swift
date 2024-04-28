@@ -13,31 +13,41 @@ struct MainTextField: View {
     let isSecureField: Bool
     let text: String
     
+    init(result: Binding<String>,
+         isSecureField: Bool = false,
+         text: String = "") {
+        self._result = result
+        self.isSecureField = isSecureField
+        self.text = text
+    }
     
     var body: some View {
         ZStack(alignment: .trailing) {
-            
             RoundedRectangle(cornerRadius: 10.0)
-                .foregroundStyle(Color("textFieldBack"))
-
+                .foregroundStyle(Color("lightGray"))
             Group {
                 if !self.isSecureField {
-                    
-                    TextField(self.text, text: self.$result)
+                    TextField("",
+                              text: self.$result,
+                              prompt: Text(text)
+                        .foregroundColor(Color("darkGray")))
                         .padding(.horizontal, 16)
-                    
                 } else {
                     Group {
                         if self.showPassword {
-                            TextField(self.text, text: self.$result)
-                        }
-                        else{
-                            SecureField(self.text, text: self.$result)
+                            TextField("",
+                                      text: self.$result,
+                                      prompt: Text(text)
+                                .foregroundColor(Color("darkGray")))
+                        } else {
+                            SecureField("",
+                                        text: self.$result,
+                                        prompt: Text(text)
+                                  .foregroundColor(Color("darkGray")))
                         }
                     }
                     .padding(.leading, 16)
                     .padding(.trailing, 30)
-                    
                     Button(action: {
                         self.showPassword.toggle()
                     }) {
@@ -48,7 +58,7 @@ struct MainTextField: View {
                 }
             }
         }
-        .foregroundStyle(Color("TextColor"))
+        .foregroundStyle(Color("black"))
         .frame(maxWidth: .infinity)
         .frame(height: 50)
     }

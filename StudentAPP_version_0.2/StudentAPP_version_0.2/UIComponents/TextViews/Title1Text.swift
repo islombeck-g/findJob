@@ -26,6 +26,7 @@ struct Title1Text: View {
     
     var body: some View {
         Text(text)
+            .lineLimit(2)
             .font(.system(size: 26))
             .kerning(0.25)
             .multilineTextAlignment(alignment)
@@ -33,5 +34,6 @@ struct Title1Text: View {
             .padding(.vertical, spacing / 2)
             .foregroundStyle(color)
             .bold()
+            .frame(maxWidth: .infinity, alignment: .center)
     }
 }

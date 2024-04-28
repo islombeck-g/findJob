@@ -21,8 +21,10 @@ struct LocationEnterField: View {
                     .foregroundStyle(Color("SecondaryColor"))
                 
                 VStack(alignment: .center) {
-                    Title1Text(color: Color("ForegroundColor"),
-                               text: "Личные данные")
+                    Text(Localizable.personalInformation.localized)
+                        .foregroundStyle(Color("ForegroundColor"))
+                        .font(.system(size: 34))
+                        .bold()
                     
                         .padding(.top,  20)
                     
@@ -31,27 +33,23 @@ struct LocationEnterField: View {
                             
                             MainTextField(result: $phoneNumber, 
                                           isSecureField: false,
-                                          text: "Номер телефона*")
+                                          text: Localizable.phone.localized + "*")
                                 .onChange(of: phoneNumber) { oldValue, newValue in
                                     phoneNumber = formatter.format(number: newValue)
                                 }
-                            Button {} label: {
-                                
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .frame(
-                                            height: 46)
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(Color("AccentColor"))
-                                    
-                                    Text("Прикрепить аватар")
-                                        .foregroundColor(.white)
-                                        .fontWeight(.bold)
-                                }
-                                
-                            }
-                            
-                            
+//                            Button {} label: {
+//                                ZStack {
+//                                    RoundedRectangle(cornerRadius: 10)
+//                                        .frame(
+//                                            height: 46)
+//                                        .frame(maxWidth: .infinity)
+//                                        .foregroundColor(Color("AccentColor"))
+//                                    
+//                                    Text("Прикрепить аватар")
+//                                        .foregroundColor(.white)
+//                                        .fontWeight(.bold)
+//                                }
+//                            }
                             Text("*Обязательное поле")
                                 .font(.system(size: 17))
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -68,16 +66,12 @@ struct LocationEnterField: View {
                                             height: 46)
                                         .frame(maxWidth: .infinity)
                                         .foregroundColor(Color("AccentColor"))
-                                    
-                                    Text("Далее")
-                                        .foregroundColor(.white)
-                                        .fontWeight(.bold)
+                                    Title4Text(color: .white, text: Localizable.next.localized)
                                 }
                             }
                         }
                         .frame(maxHeight: .infinity, alignment: .top)
                         .padding(.top, 60)
-                        
                         VStack {
                             DropDownMenuView(menuActions: DataConstants.universityes,
                                              title: $university)
@@ -85,7 +79,6 @@ struct LocationEnterField: View {
                         .frame(maxHeight: .infinity, alignment: .top)
                     }
                 }
-                
                 .padding(.horizontal)
             }
             .frame(maxHeight: 370)

@@ -60,6 +60,11 @@
 		63C60EFC2BDE9A8D00561151 /* Title3Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C60EFB2BDE9A8D00561151 /* Title3Text.swift */; };
 		63D1D3482BDE5A3700F0BCBF /* SecuredEnterField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D1D3472BDE5A3700F0BCBF /* SecuredEnterField.swift */; };
 		63D1D34B2BDE62A400F0BCBF /* ProfileServiceFromFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D1D34A2BDE62A400F0BCBF /* ProfileServiceFromFirebase.swift */; };
+		63D85C332BDEBF92002A1EA6 /* EditAccountInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D85C322BDEBF92002A1EA6 /* EditAccountInfoView.swift */; };
+		63D85C352BDEC002002A1EA6 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D85C342BDEC002002A1EA6 /* CircleImage.swift */; };
+		63D85C372BDEC144002A1EA6 /* EditProfileItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D85C362BDEC144002A1EA6 /* EditProfileItemsView.swift */; };
+		63D85C3A2BDEC879002A1EA6 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D85C392BDEC879002A1EA6 /* Localizable.swift */; };
+		63D85C3D2BDECE11002A1EA6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63D85C3F2BDECE11002A1EA6 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +114,13 @@
 		63C60EFB2BDE9A8D00561151 /* Title3Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title3Text.swift; sourceTree = "<group>"; };
 		63D1D3472BDE5A3700F0BCBF /* SecuredEnterField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuredEnterField.swift; sourceTree = "<group>"; };
 		63D1D34A2BDE62A400F0BCBF /* ProfileServiceFromFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceFromFirebase.swift; sourceTree = "<group>"; };
+		63D85C322BDEBF92002A1EA6 /* EditAccountInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountInfoView.swift; sourceTree = "<group>"; };
+		63D85C342BDEC002002A1EA6 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		63D85C362BDEC144002A1EA6 /* EditProfileItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileItemsView.swift; sourceTree = "<group>"; };
+		63D85C392BDEC879002A1EA6 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		63D85C3E2BDECE11002A1EA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63D85C402BDECF33002A1EA6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63D85C412BDECF84002A1EA6 /* uz-UZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-UZ"; path = "uz-UZ.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +166,7 @@
 				6383A5E52BDD87E800F530EB /* ViewFactory.swift */,
 				6383A64C2BDE453200F530EB /* NotificationManager.swift */,
 				6383A5F52BDD8D5B00F530EB /* UserStateManager.swift */,
+				63D85C382BDEC860002A1EA6 /* Localization */,
 				63D1D3492BDE621200F0BCBF /* Network */,
 				6383A6122BDDA0FB00F530EB /* Constants */,
 				6383A6002BDD933B00F530EB /* UIComponents */,
@@ -176,6 +189,7 @@
 		6383A5E72BDD88CC00F530EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63D85C312BDEBF5F002A1EA6 /* New Group */,
 				6383A63D2BDE28CA00F530EB /* Profile */,
 				6383A6372BDE272B00F530EB /* Response */,
 				6383A6302BDE251300F530EB /* VacancyBoard */,
@@ -241,6 +255,7 @@
 			children = (
 				6383A6022BDD936F00F530EB /* NavigationBackButton.swift */,
 				6383A6452BDE379500F530EB /* CircleImageForm.swift */,
+				63D85C342BDEC002002A1EA6 /* CircleImage.swift */,
 			);
 			path = Icon;
 			sourceTree = "<group>";
@@ -409,9 +424,27 @@
 			isa = PBXGroup;
 			children = (
 				6383A6402BDE28E900F530EB /* ProfileView.swift */,
+				63D85C322BDEBF92002A1EA6 /* EditAccountInfoView.swift */,
+				63D85C362BDEC144002A1EA6 /* EditProfileItemsView.swift */,
 				6383A64A2BDE3CC400F530EB /* ProfileItemsForm.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		63D85C312BDEBF5F002A1EA6 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		63D85C382BDEC860002A1EA6 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				63D85C392BDEC879002A1EA6 /* Localizable.swift */,
+				63D85C3F2BDECE11002A1EA6 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +499,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				"uz-UZ",
 			);
 			mainGroup = 6383A5BC2BDD85AF00F530EB;
 			packageReferences = (
@@ -486,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6383A5D02BDD85B100F530EB /* Preview Assets.xcassets in Resources */,
+				63D85C3D2BDECE11002A1EA6 /* Localizable.strings in Resources */,
 				6383A5CD2BDD85B100F530EB /* Assets.xcassets in Resources */,
 				6383A5D72BDD866700F530EB /* GoogleService-Info.plist in Resources */,
 			);
@@ -500,6 +536,7 @@
 			files = (
 				6383A6222BDDA78100F530EB /* SignInEnterDataForm.swift in Sources */,
 				6383A5F22BDD89D500F530EB /* SignInView.swift in Sources */,
+				63D85C3A2BDEC879002A1EA6 /* Localizable.swift in Sources */,
 				6383A62F2BDE22C800F530EB /* MainTabView.swift in Sources */,
 				6383A5E62BDD87E800F530EB /* ViewFactory.swift in Sources */,
 				63D1D34B2BDE62A400F0BCBF /* ProfileServiceFromFirebase.swift in Sources */,
@@ -509,6 +546,7 @@
 				6383A5F62BDD8D5B00F530EB /* UserStateManager.swift in Sources */,
 				6383A5C92BDD85B000F530EB /* StudentAPP_version_0_2App.swift in Sources */,
 				6383A6262BDDAE4F00F530EB /* Title4Text.swift in Sources */,
+				63D85C372BDEC144002A1EA6 /* EditProfileItemsView.swift in Sources */,
 				6383A6182BDDA16700F530EB /* DropDownMenuView.swift in Sources */,
 				6383A61E2BDDA2DF00F530EB /* CreateAccountUserData.swift in Sources */,
 				6383A6362BDE25E100F530EB /* MainTabViewBuilder.swift in Sources */,
@@ -532,12 +570,14 @@
 				6383A60E2BDD9C0C00F530EB /* LocationEnterField.swift in Sources */,
 				6383A6062BDD97C100F530EB /* SignInViewModel.swift in Sources */,
 				6383A6032BDD936F00F530EB /* NavigationBackButton.swift in Sources */,
+				63D85C332BDEBF92002A1EA6 /* EditAccountInfoView.swift in Sources */,
 				6383A6442BDE362300F530EB /* ProfileViewModel.swift in Sources */,
 				6383A64D2BDE453200F530EB /* NotificationManager.swift in Sources */,
 				63C60EFA2BDE9A6B00561151 /* Title2Text.swift in Sources */,
 				6383A60C2BDD9BC600F530EB /* FIOEnterField.swift in Sources */,
 				63D1D3482BDE5A3700F0BCBF /* SecuredEnterField.swift in Sources */,
 				6383A6412BDE28E900F530EB /* ProfileView.swift in Sources */,
+				63D85C352BDEC002002A1EA6 /* CircleImage.swift in Sources */,
 				6383A6462BDE379500F530EB /* CircleImageForm.swift in Sources */,
 				6383A5EC2BDD894B00F530EB /* CreateAccountViewBuilder.swift in Sources */,
 			);
@@ -545,12 +585,26 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		63D85C3F2BDECE11002A1EA6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63D85C3E2BDECE11002A1EA6 /* en */,
+				63D85C402BDECF33002A1EA6 /* ru */,
+				63D85C412BDECF84002A1EA6 /* uz-UZ */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		6383A5D12BDD85B100F530EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -614,6 +668,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

@@ -15,7 +15,7 @@ struct CustomSizeText: View {
     private let size: CGFloat
     
     init(alignment: Alignment = .leading,
-         color: Color = .black,
+         color: Color = Color("SecondaryColor"),
          text: String,
          size: CGFloat = 18) {
         self.alignment = alignment
@@ -26,8 +26,10 @@ struct CustomSizeText: View {
     
     var body: some View {
         Text(text)
+            .multilineTextAlignment(.center)
             .font(.system(size: size))
             .foregroundStyle(color)
             .frame(maxWidth: .infinity, alignment: alignment)
+            .bold()
     }
 }

@@ -22,12 +22,14 @@ struct SignInEnterDataForm: View {
                 .foregroundStyle(Color("SecondaryColor"))
             
             VStack(alignment: .center) {
-                Title1Text(color: Color("ForegroundColor"),
-                           text: "Личные данные")
+                Text(Localizable.personalInformation.localized)
+                    .foregroundStyle(Color("ForegroundColor"))
+                    .font(.system(size: 34))
+                    .bold()
                 
                 MainTextField(result: $email, 
                               isSecureField: false,
-                              text: "Почта")
+                              text: Localizable.username.localized)
                 
                 if let text = emailPrompn {
                     Text(text)
@@ -39,7 +41,7 @@ struct SignInEnterDataForm: View {
                 
                 MainTextField(result: $password, 
                               isSecureField: true,
-                              text: "Пароль")
+                              text: Localizable.password.localized)
                 
                 if let text = passwordPrompt {
                     Text(text)
@@ -57,10 +59,8 @@ struct SignInEnterDataForm: View {
                         RoundedRectangle(cornerRadius: 8)
                             .frame(height: 50)
                             .foregroundColor(Color("AccentColor"))
-                        
-                        Text(LocalizedStringKey("Войти"))
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
+                        Title4Text(color: .white,
+                                   text:  Localizable.login.localized)
                     }
                 }
             }
