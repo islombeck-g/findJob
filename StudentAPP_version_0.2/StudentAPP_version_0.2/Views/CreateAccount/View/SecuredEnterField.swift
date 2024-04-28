@@ -2,17 +2,18 @@
 //  SecuredEnterField.swift
 //  StudentAPP_version_0.2
 //
-//  Created by Islombek Gofurov on 27/04/24.
+//  Created by Islombek Gofurov on 28/04/24.
 //
 
 import SwiftUI
 
 struct SecuredEnterField: View {
     
-    @Binding var phoneNumber: String
-    @Binding var university: String
-    let action: () -> ()
-    private let formatter = PhoneFormatter()
+    @Binding var email: String
+    @Binding var password: String
+    var passwordPrompt: String?
+    var emailPrompn: String?
+    var action: () -> ()
     
     var body: some View {
         VStack {
@@ -24,92 +25,50 @@ struct SecuredEnterField: View {
                     Title1Text(color: Color("ForegroundColor"),
                                text: "Личные данные")
                     
-                        .padding(.top,  20)
+                    MainTextField(result: $email,
+                                  isSecureField: false,
+                                  text: "Почта")
                     
-                    ZStack {
-                        VStack {
-                            
-                            MainTextField(result: $phoneNumber, 
-                                          isSecureField: false,
-                                          text: "Номер телефона*")
-                                .onChange(of: phoneNumber) { oldValue, newValue in
-                                    phoneNumber = formatter.format(number: newValue)
-                                }
-                            Button {} label: {
-                                
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .frame(
-                                            height: 46)
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(Color("AccentColor"))
-                                    
-                                    Text("Прикрепить аватар")
-                                        .foregroundColor(.white)
-                                        .fontWeight(.bold)
-                                }
-                                
-                            }
-                            
-                            
-                            Text("*Обязательное поле")
-                                .font(.system(size: 17))
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .foregroundStyle(Color("darkGray"))
-                            
-                            Button {
-                                withAnimation {
-                                    action()
-                                }
-                            } label: {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .frame(
-                                            height: 46)
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(Color("AccentColor"))
-                                    
-                                    Text("Далее")
-                                        .foregroundColor(.white)
-                                        .fontWeight(.bold)
-                                }
-                            }
+                    if let text = emailPrompn {
+                        Text(text)
+                        //                        .errorText()
+                    }
+                    
+                    Spacer()
+                        .frame(height: 10)
+                    
+                    MainTextField(result: $password,
+                                  isSecureField: true,
+                                  text: "Пароль")
+                    
+                    if let text = passwordPrompt {
+                        Text(text)
+                        //                        .errorText()
+                    }
+                    
+                    Spacer().frame(height: 20)
+                    
+                    Button {
+                        withAnimation {
+                            self.action()
                         }
-                        .frame(maxHeight: .infinity, alignment: .top)
-                        .padding(.top, 60)
-                        
-                        VStack {
-                            DropDownMenuView(menuActions: DataConstants.universityes,
-                                             title: $university)
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 8)
+                                .frame(height: 50)
+                                .foregroundColor(Color("AccentColor"))
+                            
+                            Text(LocalizedStringKey("Регистрация"))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
                         }
-                        .frame(maxHeight: .infinity, alignment: .top)
                     }
                 }
-                
-                .padding(.horizontal)
+                .padding(.horizontal, 25)
+                .padding(.vertical, 20)
             }
             .frame(maxHeight: 370)
         }
         .frame(maxHeight: .infinity, alignment: .top)
-    }
-}
-
-class PhoneFormatter {
-    func format(number: String) -> String {
-        let digits = number.filter { $0.isNumber }
-        let mask = "+X (XXX) XXX-XX-XX"
-        
-        var result = ""
-        var index = digits.startIndex
-        
-        for ch in mask where index < digits.endIndex {
-            if ch == "X" {
-                result.append(digits[index])
-                index = digits.index(after: index)
-            } else {
-                result.append(ch)
-            }
-        }
-        return result
     }
 }

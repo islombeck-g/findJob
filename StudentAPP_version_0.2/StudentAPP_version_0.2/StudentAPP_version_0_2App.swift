@@ -12,7 +12,8 @@ import Firebase
 struct StudentAPP_version_0_2App: App {
     
     @StateObject var userStateManager = UserStateManager.shared
-
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
             if UserStateManager.shared.userState == .authorized {

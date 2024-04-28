@@ -22,11 +22,14 @@ struct CreateAccountView<ViewModel>: View where ViewModel: CreateAccountViewMode
             
             
             let views: [AnyView] = [
+                AnyView(SecuredEnterField(email: $viewModel.user.userAuthData.email,
+                                          password: $viewModel.password,
+                                          action: viewModel.nextEnterDataView)),
                 AnyView(FIOEnterField(firstName: $viewModel.user.firstName,
                                       secondName: $viewModel.user.secondName,
                                       patronymicName: $viewModel.user.patronymicName,
                                       action: viewModel.nextEnterDataView)),
-                AnyView(SecuredEnterField(phoneNumber: $viewModel.user.phoneNumber,
+                AnyView(LocationEnterField(phoneNumber: $viewModel.user.phoneNumber,
                                           university: $viewModel.user.university,
                                           action: viewModel.nextEnterDataView))]
             
@@ -54,6 +57,24 @@ struct CreateAccountView<ViewModel>: View where ViewModel: CreateAccountViewMode
                     }
                 }
                 .navigationBarBackButtonHidden(true)
+                
+                Button {
+                    self.viewModel.user = UserData(userAuthData: UserAuthData(id: "", email: "test@gmail.com"),
+                                    firstName: "тест",
+                                    secondName: "тестов",
+                                    patronymicName: "тестович",
+                                    birthDate: "",
+                                    university: DataConstants.universityes.first!.title,
+                                    institute: "",
+                                    phoneNumber: "+9 (999) 999-99-99",
+                                    aboutMe: "",
+                                    gender: .male,
+                                    city: "",
+                                    direction: "")
+                    self.viewModel.password = "test@gmail.com"
+                } label: {
+                    Text("testData")
+                }
             }
             
         }

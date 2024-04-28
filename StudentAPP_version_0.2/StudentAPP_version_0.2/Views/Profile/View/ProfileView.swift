@@ -11,6 +11,9 @@ struct ProfileView<ViewModel>: View where ViewModel: ProfileViewModelProtol {
     
     @StateObject var viewModel: ViewModel
     
+    @State private var logOut_isAllertShow:Bool = false
+    @State private var deleteAcount_isAllertShow:Bool = false
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -38,11 +41,10 @@ struct ProfileView<ViewModel>: View where ViewModel: ProfileViewModelProtol {
                                 }
                                 
                             } label: {
-                                
-                                    Image(systemName: "globe.europe.africa.fill")
-                                        .font(.system(size: 19))
-                                        .fontWeight(.bold)
-                                        .foregroundStyle(Color("SecondaryColor"))
+                                Image(systemName: "globe.europe.africa.fill")
+                                    .font(.system(size: 19))
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(Color("SecondaryColor"))
                                 
                                 
                             }.frame(maxWidth: .infinity, alignment: .leading)
@@ -62,7 +64,7 @@ struct ProfileView<ViewModel>: View where ViewModel: ProfileViewModelProtol {
                                 Divider()
                                 
                                 Button(role: .destructive) {
-                                    self.deleteAcount_isAllertShow.toggle()
+                                    //                                    self.deleteAcount_isAllertShow.toggle()
                                 }label:{
                                     Text("Удалить аккаунт")
                                 }
@@ -77,18 +79,18 @@ struct ProfileView<ViewModel>: View where ViewModel: ProfileViewModelProtol {
                             .foregroundStyle(Color("SecondaryColor"))
                         }
                         .padding(.horizontal, 16)
+                        
                         ScrollView {
                             
                             CircleImageForm(
-                                name: self.$presenetr.userFullData.firstName,
-                                secondName: self.$presenetr.userFullData.secondName,
-                                patronymicName: self.$presenetr.userFullData.patronymicName,
-                                image: self.$presenetr.userFullData.image,
-                                phoneNumber: self.$presenetr.userFullData.phoneNumber)
+                                name: viewModel.userData?.firstName ?? "error",
+                                secondName: viewModel.userData?.secondName ?? "error",
+                                patronymicName: viewModel.userData?.patronymicName ?? "error",
+                                phoneNumber: viewModel.userData?.phoneNumber ?? "error")
                             .padding(.vertical, 16)
                             
                             Button {
-                                router.navigateTo(route: .cv)
+                                
                             } label: {
                                 Group {
                                     Text(LocalizedStringKey("Мое резюме"))
@@ -106,16 +108,19 @@ struct ProfileView<ViewModel>: View where ViewModel: ProfileViewModelProtol {
                             Spacer()
                                 .frame(height: 36)
                             
-                            ProfileItemsForm(birthDate: self.$presenetr.userFullData.birthDate, university: $presenetr.userFullData.university)
+                            ProfileItemsForm(aboutMe: viewModel.userData?.aboutMe ?? "",
+                                             birthDate: viewModel.userData?.birthDate ?? "",
+                                             institute: viewModel.userData?.institute ?? "",
+                                             direction: viewModel.userData?.direction ?? "",
+                                             university: viewModel.userData?.university ?? "")
                             
                             Spacer()
                                 .frame(height: 30)
                             
                             Button {
                                 withAnimation {
-                                    self.router.navigateTo(route: .support)
+                                    
                                 }
-                               
                             } label: {
                                 Group {
                                     Text("Тех. поддержка")
@@ -140,7 +145,6 @@ struct ProfileView<ViewModel>: View where ViewModel: ProfileViewModelProtol {
                             Button {
                                 self.logOut_isAllertShow.toggle()
                             }label: {
-                                
                                 Text("Выйти")
                                     .frame(maxWidth: .infinity)
                                     .frame(height: 60)
@@ -150,40 +154,35 @@ struct ProfileView<ViewModel>: View where ViewModel: ProfileViewModelProtol {
                                 
                             }
                             .padding(.horizontal, 16)
-                            
                             .alert("Хотите выйти?", isPresented: self.$logOut_isAllertShow) {
-                                
                                 Text("Отмена")
-                                
-                                Button{
-                                    //                                self.viewModel.logOut()
-                                }label: {
-                                    Text("Выйти")
-                                }
+                                Button {
+                                    UserStateManager.shared.signOut()
+                                } label: { Text("Выйти") }
                             } message: {
                                 Text("")
                             }
-                            
                             .alert("Удалить аккаунт", isPresented: self.$deleteAcount_isAllertShow) {
-                                Button{}label: {
+                                Button {} label: {
                                     Text("Отмена")
                                 }
-                                
-                                Button{
+                                Button {
                                     
-                                }label: {
-                                    Text("Удалить")
-                                }
+                                } label: { Text("Удалить") }
                             } message: {
                                 Text("Восстановление аккаунта невозможно после удаления.")
                             }
                         }
                         
+                        
+                        
                     }
                 }
                 .navigationBarBackButtonHidden(true)
                 .navigationBarTitleDisplayMode(.inline)
-                
+            }
+            .task {
+                await viewModel.getUserData()
             }
         }
     }

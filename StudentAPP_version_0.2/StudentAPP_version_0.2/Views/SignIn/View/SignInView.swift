@@ -63,8 +63,8 @@ struct SignInView<ViewModel>: View where ViewModel: SignInViewModelProtocol {
                         }
                     }
                     Button {
-                        viewModel.email = "some@gmail.com"
-                        viewModel.password = "passwordIsHere"
+                        viewModel.email = "test@gmail.com"
+                        viewModel.password = "test@gmail.com"
                     } label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)

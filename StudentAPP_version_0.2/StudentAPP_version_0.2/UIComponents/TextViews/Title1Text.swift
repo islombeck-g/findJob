@@ -15,7 +15,7 @@ struct Title1Text: View {
     private let spacing: CGFloat
     
     init(alignment: TextAlignment = .leading,
-         color: Color = .text,
+         color: Color = Color("SecondaryColor"),
          text: String) {
         let size: CGFloat = 26
         self.alignment = alignment

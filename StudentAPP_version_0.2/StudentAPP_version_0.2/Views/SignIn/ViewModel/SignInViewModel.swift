@@ -25,7 +25,9 @@ final class SignInViewModel: SignInViewModelProtocol {
         return "Почта введена не корректно. Введите по шаблону: test@test.com"
     }
     func trySignIn() {
-        userManager.userState = .authorized
+        Task {
+            try await userManager.signIn(email, password)
+        }
     }
     func cleanData() {
         email = ""
