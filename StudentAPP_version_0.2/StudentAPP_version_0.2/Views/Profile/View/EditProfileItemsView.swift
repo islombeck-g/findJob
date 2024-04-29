@@ -9,176 +9,106 @@ import SwiftUI
 
 struct EditProfileItemsView: View {
     
-    @State var firstName: String
-    @State var secondName: String
-    @State var patronymicName: String
-    @State var birthDate: String
-    @State var university: String
-    @State var institute: String
-    @State var phoneNumber: String
-    @State var aboutMe: String
-    @State var city: String
-    @State var direction: String
+    @Binding var firstName: String
+    @Binding var secondName: String
+    @Binding var patronymicName: String
+    @Binding var birthDate: String
+    @Binding var university: String
+    @Binding var institute: String
+    @Binding var phoneNumber: String
+    @Binding var aboutMe: String
+    @Binding var city: String
+    @Binding var direction: String
+    private let formatter = PhoneFormatter()
     
-    init(firstName: String,
-         secondName: String,
-         patronymicName: String,
-         birthDate: String,
-         university: String,
-         institute: String,
-         phoneNumber: String,
-         aboutMe: String,
-         city: String,
-         direction: String) {
-        self._firstName = State(initialValue: firstName)
-        self._secondName = State(initialValue: secondName)
-        self._patronymicName = State(initialValue: patronymicName)
-        self._birthDate = State(initialValue: birthDate)
-        self._university = State(initialValue: university)
-        self._institute = State(initialValue: institute)
-        self._phoneNumber = State(initialValue: phoneNumber)
-        self._aboutMe = State(initialValue: aboutMe)
-        self._city = State(initialValue: city)
-        self._direction = State(initialValue: direction)
+    init(firstName: Binding<String>,
+         secondName: Binding<String>,
+         patronymicName: Binding<String>,
+         birthDate: Binding<String>,
+         university: Binding<String>,
+         institute: Binding<String>,
+         phoneNumber: Binding<String>,
+         aboutMe: Binding<String>,
+         city: Binding<String>,
+         direction: Binding<String>) {
+        self._firstName = firstName
+        self._secondName = secondName
+        self._patronymicName = patronymicName
+        self._birthDate = birthDate
+        self._university = university
+        self._institute = institute
+        self._phoneNumber = phoneNumber
+        self._aboutMe = aboutMe
+        self._city = city
+        self._direction = direction
     }
     
     var body: some View {
         VStack {
             Group {
                 Title3Text(text: Localizable.firstName.localized)
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 MainTextField(result: $firstName)
                 
-                
                 Title3Text(text: Localizable.lastName.localized)
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 MainTextField(result: $secondName)
+                
                 Title3Text(text: Localizable.middleName.localized)
-                Text("35")
-                    .fontWeight(.bold)
                 MainTextField(result: $patronymicName)
             }
-            
-            
+            .frame(maxWidth: .infinity, alignment: .leading)
             Group {
-                Text("23")
-                MainTextField(result: $firstName, isSecureField: false)
+                Title3Text(text: Localizable.university.localized)
+                MainTextField(result: $university)
+                
+                Title3Text(text: Localizable.institute.localized)
+                MainTextField(result: $institute)
+                
+                Title3Text(text: Localizable.fieldOfStudy.localized)
+                MainTextField(result: $direction)
             }
-            
-            
-            
-            //            Group {
-            //                Text("27")
-            //                    .fontWeight(.bold)
-            //                MainTextField(isSecureField: false, text: "", result: $birthDate)
-            //
-            //                Text("Город")
-            //                    .fontWeight(.bold)
-            //                MainTextField(isSecureField: false, text: "", result: $city)
-            //
-            //                Text("32")
-            //                    .fontWeight(.bold)
-            //                MainTextField(isSecureField: false, text: "", result: $aboutMe)
-            //            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            Group {
+                Title3Text(text: Localizable.dateOfBirth.localized)
+                MainTextField(result: $birthDate)
+                
+                Title3Text(text: Localizable.placeOfStudy.localized)
+                MainTextField(result: $city)
+                
+                Title3Text(text: Localizable.phone.localized)
+                MainTextField(result: $phoneNumber,
+                              isSecureField: false,
+                              text: Localizable.phone.localized + "*")
+                .onChange(of: phoneNumber) { oldValue, newValue in
+                    phoneNumber = formatter.format(number: newValue)
+                }
+                
+                Title3Text(text: Localizable.aboutMe.localized)
+                MainTextField(result: $aboutMe)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        //        .frame(maxWidth: .infinity, alignment: .leading)
-        //        .foregroundStyle(Color("SecondaryColor"))
         .padding(.horizontal, 16)
     }
 }
 
-
-////
-////  EditProfileViewItems.swift
-////  StudentAPP_version_0.2
-////
-////  Created by Islombek Gofurov on 28/04/24.
-////
-//
-//import SwiftUI
-//
-//struct EditProfileItemsView: View {
-//
-//    @State var firstName: String
-//    @State var secondName: String
-//    @State var patronymicName: String
-//    @State var birthDate: String
-//    @State var university: String
-//    @State var institute: String
-//    @State var phoneNumber: String
-//    @State var aboutMe: String
-//    @State var city: String
-//    @State var direction: String
-//
-//    init(firstName: String,
-//          secondName: String,
-//          patronymicName: String,
-//          birthDate: String,
-//          university: String,
-//          institute: String,
-//          phoneNumber: String,
-//          aboutMe: String,
-//          city: String,
-//          direction: String) {
-//        self._firstName = State(initialValue: firstName)
-//        self._secondName = State(initialValue: secondName)
-//        self._patronymicName = State(initialValue: patronymicName)
-//        self._birthDate = State(initialValue: birthDate)
-//        self._university = State(initialValue: university)
-//        self._institute = State(initialValue: institute)
-//        self._phoneNumber = State(initialValue: phoneNumber)
-//        self._aboutMe = State(initialValue: aboutMe)
-//        self._city = State(initialValue: city)
-//        self._direction = State(initialValue: direction)
-//    }
-//
-//    var body: some View {
-//        VStack {
-//            Group {
-//                Text("34")
-//                    .fontWeight(.bold)
-//                MainTextField(isSecureField: false, text: "", result: $firstName)
-//
-//                Text("33")
-//                    .font(.system(size:15))
-//                    .fontWeight(.bold)
-//                MainTextField(isSecureField: false, text: "", result: $secondName)
-//
-//                Text("35")
-//                    .fontWeight(.bold)
-//                MainTextField(isSecureField: false, text: "", result: $patronymicName)
-//            }
-//
-//            Group {
-//                Text("29")
-//                    .fontWeight(.bold)
-//                MainTextField(isSecureField: false, text: "", result: $university)
-//                Text("30")
-//                    .fontWeight(.bold)
-//                MainTextField(isSecureField: false, text: "", result: $institute)
-//
-//                Text("31")
-//                    .fontWeight(.bold)
-//                MainTextField(isSecureField: false, text: "", result: $direction)
-//            }
-//
-//            Group {
-//                Text("27")
-//                    .fontWeight(.bold)
-//                MainTextField(isSecureField: false, text: "", result: $birthDate)
-//
-//                Text("Город")
-//                    .fontWeight(.bold)
-//                MainTextField(isSecureField: false, text: "", result: $city)
-//
-//                Text("32")
-//                    .fontWeight(.bold)
-//                MainTextField(isSecureField: false, text: "", result: $aboutMe)
-//            }
-//        }
-////        .frame(maxWidth: .infinity, alignment: .leading)
-////        .foregroundStyle(Color("SecondaryColor"))
-//        .padding(.horizontal, 16)
-//    }
+//init(firstName: <String>,
+//     secondName: String,
+//     patronymicName: String,
+//     birthDate: String,
+//     university: String,
+//     institute: String,
+//     phoneNumber: String,
+//     aboutMe: String,
+//     city: String,
+//     direction: String) {
+//    self._firstName = State(initialValue: firstName)
+//    self._secondName = State(initialValue: secondName)
+//    self._patronymicName = State(initialValue: patronymicName)
+//    self._birthDate = State(initialValue: birthDate)
+//    self._university = State(initialValue: university)
+//    self._institute = State(initialValue: institute)
+//    self._phoneNumber = State(initialValue: phoneNumber)
+//    self._aboutMe = State(initialValue: aboutMe)
+//    self._city = State(initialValue: city)
+//    self._direction = State(initialValue: direction)
 //}
-//

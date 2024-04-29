@@ -42,6 +42,7 @@ struct SignInView<ViewModel>: View where ViewModel: SignInViewModelProtocol {
                         .frame(height: 24)
                     
                     Title4Text(alignment: .center, text: Localizable.logInWith.localized)
+                        .frame(maxWidth: .infinity, alignment: .center)
                     
                     Button {
                         

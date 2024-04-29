@@ -65,11 +65,8 @@ struct CvView: View {
                     }
                 }
             }
-            //            .navigationBarTitleDisplayMode(.inline)
-            
         }
         .navigationBarBackButtonHidden(true)
-        //        .toolbar(.hidden, for: .tabBar)
     }
 }
 

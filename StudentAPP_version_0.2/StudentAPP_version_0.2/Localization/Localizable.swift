@@ -58,6 +58,7 @@ enum Localizable: String {
     case location = "LOCATION"
     case salary = "SALARY"
     case aboutTheVacancy = "ABOUT_THE_VACANCY"
+    case saveChanges = "SAVE_CHANGES"
     
     // MARK: - Support
     
@@ -68,6 +69,7 @@ enum Localizable: String {
     
     case resume = "RESUME"
     case age = "AGE"
+    case years = "YEARS"
     case citizenship = "CITIZENSHIP"
     case phone = "PHONE"
     case education = "EDUCATION"

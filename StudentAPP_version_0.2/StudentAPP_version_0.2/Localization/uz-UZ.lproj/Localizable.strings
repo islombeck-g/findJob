@@ -44,7 +44,8 @@
 "SUPPORT" = "Qo'llab-quvvatlash";
 "ASK_YOUR_QUESTION" = "Savolingizni so'rang";
 "RESUME" = "Rezyume";
-"AGE" = "Yosh: %lld yil";
+"AGE" = "Yosh";
+"YEARS" = "yil";
 "CITIZENSHIP" = "Fuqarolik";
 "PHONE" = "Telefon";
 "EDUCATION" = "Ta'lim";

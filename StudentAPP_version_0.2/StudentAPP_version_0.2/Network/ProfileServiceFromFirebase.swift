@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-final class ProfileServiceFromFirebase: ProfileServiceFromFirebaseProtocol {
+final class ProfileServiceFromFirebase {
     
     static var shared = ProfileServiceFromFirebase()
     private let db = Firestore.firestore()
@@ -120,8 +120,4 @@ final class ProfileServiceFromFirebase: ProfileServiceFromFirebaseProtocol {
             }
         }
     }
-}
-
-protocol ProfileServiceFromFirebaseProtocol: ObservableObject {
-    
 }

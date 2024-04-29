@@ -46,7 +46,7 @@ struct ViewFactory {
         case .profile:
             ProfileViewBuilder.build()
         case .cv:
-            EmptyView()
+            CVListViewBuilder.build()
         }
     }
  

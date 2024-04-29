@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6301B2BB2BDFA28300D02FD8 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2BA2BDFA28300D02FD8 /* SubmitButton.swift */; };
+		6301B2BD2BDFAB8200D02FD8 /* ResumeServiceFromFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2BC2BDFAB8200D02FD8 /* ResumeServiceFromFirebase.swift */; };
+		6301B2C12BDFAC0200D02FD8 /* CVListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2C02BDFAC0200D02FD8 /* CVListView.swift */; };
+		6301B2C32BDFAC1F00D02FD8 /* CVListViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2C22BDFAC1F00D02FD8 /* CVListViewBuilder.swift */; };
+		6301B2C72BDFAC7300D02FD8 /* CVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2C62BDFAC7300D02FD8 /* CVViewModel.swift */; };
+		6301B2CA2BDFB47800D02FD8 /* CvData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2C92BDFB47800D02FD8 /* CvData.swift */; };
+		6301B2CC2BDFB80C00D02FD8 /* CvOverForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2CB2BDFB80C00D02FD8 /* CvOverForm.swift */; };
+		6301B2CE2BDFCF9E00D02FD8 /* CvCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2CD2BDFCF9E00D02FD8 /* CvCreateView.swift */; };
+		6301B2D02BDFD02800D02FD8 /* CvCreateViewTextFieldItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2CF2BDFD02800D02FD8 /* CvCreateViewTextFieldItems.swift */; };
+		6301B2D22BDFD13000D02FD8 /* MainTextFieldNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2D12BDFD13000D02FD8 /* MainTextFieldNumbers.swift */; };
+		6301B2D42BE01C3800D02FD8 /* CvFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2D32BE01C3800D02FD8 /* CvFullView.swift */; };
+		6301B2D62BE01D0000D02FD8 /* CvScrollInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2D52BE01D0000D02FD8 /* CvScrollInfoForm.swift */; };
 		6383A5C92BDD85B000F530EB /* StudentAPP_version_0_2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383A5C82BDD85B000F530EB /* StudentAPP_version_0_2App.swift */; };
 		6383A5CD2BDD85B100F530EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6383A5CC2BDD85B100F530EB /* Assets.xcassets */; };
 		6383A5D02BDD85B100F530EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6383A5CF2BDD85B100F530EB /* Preview Assets.xcassets */; };
@@ -68,6 +80,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6301B2BA2BDFA28300D02FD8 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		6301B2BC2BDFAB8200D02FD8 /* ResumeServiceFromFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeServiceFromFirebase.swift; sourceTree = "<group>"; };
+		6301B2C02BDFAC0200D02FD8 /* CVListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVListView.swift; sourceTree = "<group>"; };
+		6301B2C22BDFAC1F00D02FD8 /* CVListViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVListViewBuilder.swift; sourceTree = "<group>"; };
+		6301B2C62BDFAC7300D02FD8 /* CVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVViewModel.swift; sourceTree = "<group>"; };
+		6301B2C92BDFB47800D02FD8 /* CvData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvData.swift; sourceTree = "<group>"; };
+		6301B2CB2BDFB80C00D02FD8 /* CvOverForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvOverForm.swift; sourceTree = "<group>"; };
+		6301B2CD2BDFCF9E00D02FD8 /* CvCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvCreateView.swift; sourceTree = "<group>"; };
+		6301B2CF2BDFD02800D02FD8 /* CvCreateViewTextFieldItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvCreateViewTextFieldItems.swift; sourceTree = "<group>"; };
+		6301B2D12BDFD13000D02FD8 /* MainTextFieldNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextFieldNumbers.swift; sourceTree = "<group>"; };
+		6301B2D32BE01C3800D02FD8 /* CvFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvFullView.swift; sourceTree = "<group>"; };
+		6301B2D52BE01D0000D02FD8 /* CvScrollInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvScrollInfoForm.swift; sourceTree = "<group>"; };
 		6383A5C52BDD85B000F530EB /* StudentAPP_version_0.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentAPP_version_0.2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6383A5C82BDD85B000F530EB /* StudentAPP_version_0_2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAPP_version_0_2App.swift; sourceTree = "<group>"; };
 		6383A5CC2BDD85B100F530EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +166,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6301B2BE2BDFAB9F00D02FD8 /* ViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				6383A5E52BDD87E800F530EB /* ViewFactory.swift */,
+			);
+			path = ViewFactory;
+			sourceTree = "<group>";
+		};
+		6301B2BF2BDFABF300D02FD8 /* CV */ = {
+			isa = PBXGroup;
+			children = (
+				6301B2C22BDFAC1F00D02FD8 /* CVListViewBuilder.swift */,
+				6301B2C82BDFB45F00D02FD8 /* Model */,
+				6301B2C52BDFAC5400D02FD8 /* View */,
+				6301B2C42BDFAC4B00D02FD8 /* ViewModel */,
+			);
+			path = CV;
+			sourceTree = "<group>";
+		};
+		6301B2C42BDFAC4B00D02FD8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6301B2C62BDFAC7300D02FD8 /* CVViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6301B2C52BDFAC5400D02FD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6301B2C02BDFAC0200D02FD8 /* CVListView.swift */,
+				6301B2CB2BDFB80C00D02FD8 /* CvOverForm.swift */,
+				6301B2CD2BDFCF9E00D02FD8 /* CvCreateView.swift */,
+				6301B2CF2BDFD02800D02FD8 /* CvCreateViewTextFieldItems.swift */,
+				6301B2D32BE01C3800D02FD8 /* CvFullView.swift */,
+				6301B2D52BE01D0000D02FD8 /* CvScrollInfoForm.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6301B2C82BDFB45F00D02FD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6301B2C92BDFB47800D02FD8 /* CvData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6383A5BC2BDD85AF00F530EB = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				6383A5C82BDD85B000F530EB /* StudentAPP_version_0_2App.swift */,
-				6383A5E52BDD87E800F530EB /* ViewFactory.swift */,
+				6301B2BE2BDFAB9F00D02FD8 /* ViewFactory */,
 				6383A64C2BDE453200F530EB /* NotificationManager.swift */,
 				6383A5F52BDD8D5B00F530EB /* UserStateManager.swift */,
 				63D85C382BDEC860002A1EA6 /* Localization */,
@@ -189,7 +261,7 @@
 		6383A5E72BDD88CC00F530EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				63D85C312BDEBF5F002A1EA6 /* New Group */,
+				6301B2BF2BDFABF300D02FD8 /* CV */,
 				6383A63D2BDE28CA00F530EB /* Profile */,
 				6383A6372BDE272B00F530EB /* Response */,
 				6383A6302BDE251300F530EB /* VacancyBoard */,
@@ -254,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				6383A6022BDD936F00F530EB /* NavigationBackButton.swift */,
+				6301B2BA2BDFA28300D02FD8 /* SubmitButton.swift */,
 				6383A6452BDE379500F530EB /* CircleImageForm.swift */,
 				63D85C342BDEC002002A1EA6 /* CircleImage.swift */,
 			);
@@ -291,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				6383A6102BDD9F3800F530EB /* MainTextField.swift */,
+				6301B2D12BDFD13000D02FD8 /* MainTextFieldNumbers.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -416,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				63D1D34A2BDE62A400F0BCBF /* ProfileServiceFromFirebase.swift */,
+				6301B2BC2BDFAB8200D02FD8 /* ResumeServiceFromFirebase.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -429,13 +504,6 @@
 				6383A64A2BDE3CC400F530EB /* ProfileItemsForm.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		63D85C312BDEBF5F002A1EA6 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		63D85C382BDEC860002A1EA6 /* Localization */ = {
@@ -534,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6301B2D02BDFD02800D02FD8 /* CvCreateViewTextFieldItems.swift in Sources */,
 				6383A6222BDDA78100F530EB /* SignInEnterDataForm.swift in Sources */,
 				6383A5F22BDD89D500F530EB /* SignInView.swift in Sources */,
 				63D85C3A2BDEC879002A1EA6 /* Localizable.swift in Sources */,
@@ -543,24 +612,31 @@
 				6383A6202BDDA37500F530EB /* Enums.swift in Sources */,
 				6383A6392BDE274700F530EB /* ResponseView.swift in Sources */,
 				6383A63F2BDE28DC00F530EB /* ProfileViewBuilder.swift in Sources */,
+				6301B2C32BDFAC1F00D02FD8 /* CVListViewBuilder.swift in Sources */,
 				6383A5F62BDD8D5B00F530EB /* UserStateManager.swift in Sources */,
 				6383A5C92BDD85B000F530EB /* StudentAPP_version_0_2App.swift in Sources */,
 				6383A6262BDDAE4F00F530EB /* Title4Text.swift in Sources */,
 				63D85C372BDEC144002A1EA6 /* EditProfileItemsView.swift in Sources */,
 				6383A6182BDDA16700F530EB /* DropDownMenuView.swift in Sources */,
+				6301B2CE2BDFCF9E00D02FD8 /* CvCreateView.swift in Sources */,
 				6383A61E2BDDA2DF00F530EB /* CreateAccountUserData.swift in Sources */,
 				6383A6362BDE25E100F530EB /* MainTabViewBuilder.swift in Sources */,
+				6301B2D62BE01D0000D02FD8 /* CvScrollInfoForm.swift in Sources */,
 				6383A6092BDD981200F530EB /* CreateAccountViewModel.swift in Sources */,
+				6301B2BD2BDFAB8200D02FD8 /* ResumeServiceFromFirebase.swift in Sources */,
 				6383A6342BDE254200F530EB /* VacancyBoardViewBuilder.swift in Sources */,
 				6383A62A2BDDAFCC00F530EB /* CustomSizeText.swift in Sources */,
 				6383A6152BDDA12800F530EB /* DataConstants.swift in Sources */,
 				6383A5E92BDD892300F530EB /* CreateAccountView.swift in Sources */,
+				6301B2C12BDFAC0200D02FD8 /* CVListView.swift in Sources */,
 				6383A6112BDD9F3800F530EB /* MainTextField.swift in Sources */,
 				6383A5F42BDD89E100F530EB /* SignInViewBuilder.swift in Sources */,
 				6383A61B2BDDA2CA00F530EB /* SignInUserData.swift in Sources */,
 				6383A6282BDDAF9E00F530EB /* TabText.swift in Sources */,
+				6301B2CC2BDFB80C00D02FD8 /* CvOverForm.swift in Sources */,
 				63C60EFC2BDE9A8D00561151 /* Title3Text.swift in Sources */,
 				6383A62C2BDDB26900F530EB /* Title1Text.swift in Sources */,
+				6301B2D42BE01C3800D02FD8 /* CvFullView.swift in Sources */,
 				6383A63B2BDE275E00F530EB /* ResponseViewBuilder.swift in Sources */,
 				6383A6322BDE253200F530EB /* VacancyBoardView.swift in Sources */,
 				6383A5F02BDD89A300F530EB /* IntroductionView.swift in Sources */,
@@ -570,6 +646,7 @@
 				6383A60E2BDD9C0C00F530EB /* LocationEnterField.swift in Sources */,
 				6383A6062BDD97C100F530EB /* SignInViewModel.swift in Sources */,
 				6383A6032BDD936F00F530EB /* NavigationBackButton.swift in Sources */,
+				6301B2C72BDFAC7300D02FD8 /* CVViewModel.swift in Sources */,
 				63D85C332BDEBF92002A1EA6 /* EditAccountInfoView.swift in Sources */,
 				6383A6442BDE362300F530EB /* ProfileViewModel.swift in Sources */,
 				6383A64D2BDE453200F530EB /* NotificationManager.swift in Sources */,
@@ -580,6 +657,9 @@
 				63D85C352BDEC002002A1EA6 /* CircleImage.swift in Sources */,
 				6383A6462BDE379500F530EB /* CircleImageForm.swift in Sources */,
 				6383A5EC2BDD894B00F530EB /* CreateAccountViewBuilder.swift in Sources */,
+				6301B2CA2BDFB47800D02FD8 /* CvData.swift in Sources */,
+				6301B2BB2BDFA28300D02FD8 /* SubmitButton.swift in Sources */,
+				6301B2D22BDFD13000D02FD8 /* MainTextFieldNumbers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

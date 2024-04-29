@@ -17,7 +17,7 @@
 "PROFILE" = "Профиль";
 "EDIT_PROFILE" = "Редактировать профиль";
 "DELETE_ACCOUNT" = "Удалить аккаунт";
-"MY_CV" = "Моё резюме";
+"MY_CV" = "Мои резюме";
 "TECHNICAL_SUPPORT" = "Техническая поддержка";
 "LOG_OUT" = "Выйти";
 "LOG_OUT_CONFIRMATION" = "Вы уверены, что хотите выйти?";
@@ -44,7 +44,8 @@
 "SUPPORT" = "Поддержка";
 "ASK_YOUR_QUESTION" = "Задайте ваш вопрос";
 "RESUME" = "Резюме";
-"AGE" = "Возраст: %lld лет";
+"AGE" = "Возраст";
+"YEARS" = "лет";
 "CITIZENSHIP" = "Гражданство";
 "PHONE" = "Телефон";
 "EDUCATION" = "Образование";
@@ -69,3 +70,4 @@
 "DELETE_RESUME_CONFIRMATION" = "Подтверждение удаления резюме";
 "EDIT_RESUME" = "Редактировать резюме";
 "DESIRED_POSITION_PLACEHOLDER" = "Желаемая должность";
+"SAVE_CHANGES" = "Сохранить изменения";

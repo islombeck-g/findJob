@@ -12,19 +12,22 @@ struct Title3Text: View {
     private let color: Color
     private let text: String
     private let spacing: CGFloat
+    private let lineLimit: Int
     
     init(alignment: TextAlignment = .leading,
          color: Color = Color("SecondaryColor"),
-         text: String) {
-        let size: CGFloat = 18
+         text: String,
+         lineLimit: Int = 1) {
         self.alignment = alignment
         self.color = color
         self.text = text
-        self.spacing = 24 - size
+        self.spacing = 24 - 18
+        self.lineLimit = lineLimit
     }
     
     var body: some View {
         Text(text)
+            .lineLimit(lineLimit)
             .multilineTextAlignment(alignment)
             .lineSpacing(spacing)
             .padding(.vertical, spacing / 2)

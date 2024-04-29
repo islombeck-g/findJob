@@ -44,7 +44,8 @@
 "SUPPORT" = "Support";
 "ASK_YOUR_QUESTION" = "Ask Your Question";
 "RESUME" = "Resume";
-"AGE" = "Age: %lld years";
+"AGE" = "Age";
+"YEARS" = "years";
 "CITIZENSHIP" = "Citizenship";
 "PHONE" = "Phone";
 "EDUCATION" = "Education";
@@ -69,4 +70,4 @@
 "DELETE_RESUME_CONFIRMATION" = "Delete resume confirmation";
 "EDIT_RESUME" = "Edit resume";
 "DESIRED_POSITION_PLACEHOLDER" = "Desired position";
-
+"SAVE_CHANGES" = "Save changes";

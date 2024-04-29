@@ -37,11 +37,24 @@ final class ProfileViewModel: ProfileViewModelProtol {
                 print("!!!!!!!!!readUserData Error!!!!!!!!! \(failure.localizedDescription)")
             }
         }
-    } 
+    }
+    func saveProfileEditChanges(_ userData: UserData) {
+        profileService.updateUserData(userId: userAuthData.id, updatedUserData: userData.userDataForNetwork) { response in
+            switch response {
+            case .success(_):
+                Task {
+                    await self.getUserData()
+                }
+            case .failure(let failure):
+                print("?????? error in save changes: \(failure.localizedDescription)")
+            }
+        }
+    }
 }
 
 protocol ProfileViewModelProtol: ObservableObject {
     var userData: UserData? { get set }
     func getUserData() async
+    func saveProfileEditChanges(_ userData: UserData)
 }
 

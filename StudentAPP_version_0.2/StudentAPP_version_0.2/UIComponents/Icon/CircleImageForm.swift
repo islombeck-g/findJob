@@ -17,8 +17,9 @@ struct CircleImageForm: View {
     var body: some View {
         HStack{
             Group {
-                Circle()
-                    .foregroundStyle(.gray)
+                Image("userImage")
+                    .resizable()
+                    .cornerRadius(100)
             }
             .frame(width: 77, height: 77)
             .padding(.leading, 16)

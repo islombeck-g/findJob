@@ -13,24 +13,25 @@ struct Title4Text: View {
     private let color: Color
     private let text: String
     private let spacing: CGFloat
+    private let lineLimit: Int
     
     init(alignment: Alignment = .center,
          color: Color = Color("SecondaryColor"),
-         text: String) {
-        let size: CGFloat = 16
+         text: String,
+         lineLimit: Int = 1) {
         self.alignment = alignment
         self.color = color
         self.text = text
-        self.spacing = 20 - size
+        self.spacing = 20 - 16
+        self.lineLimit = lineLimit
     }
     
     var body: some View {
         Text(text)
+            .lineLimit(lineLimit)
             .kerning(0.2)
             .lineSpacing(spacing)
-            .padding(.vertical, spacing / 2)
             .foregroundStyle(color)
             .bold()
-            .frame(maxWidth: .infinity, alignment: alignment)
     }
 }
