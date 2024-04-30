@@ -10,23 +10,23 @@ import SwiftUI
 struct VacancyDetailView: View {
     let vc:Job
     @State var isFavorite: Bool = false
-    let action: (_ job: Job) -> ()
+    let action: (_ job: Job, _ cv: CvData) -> ()
+    @State var showSheetView: Bool = false
     var body: some View {
         VStack {
             ZStack {
                 Color("ForegroundColor")
                     .ignoresSafeArea()
-                
                 VStack {
-                    
                     ScrollView {
                         VacancyScrollInfoForm(vc: vc)
                             .padding(.horizontal, 16)
-                        
                         Spacer()
                             .frame(height: 25)
-                        Button{
-                            action(vc)
+                        Button {
+                            withAnimation {
+                                showSheetView.toggle()
+                            }
                         } label: {
                             Text("Откликнутся")
                                 .foregroundStyle(.white)
@@ -56,9 +56,7 @@ struct VacancyDetailView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     
                         Button {
-                            withAnimation(.spring) {
-                                //                            self.toggleFavorite()
-                            }
+                            
                         } label: {
                             Image(systemName: isFavorite == true ?  "star.fill" : "star")
                                 .rotationEffect(.degrees(90))
@@ -72,6 +70,9 @@ struct VacancyDetailView: View {
             .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .tabBar)
         }
+        .sheet(isPresented: $showSheetView, content: {
+            ChoseCVForApplyToVacancyView(action: action, vc: vc)
+        })
     }
 }
 

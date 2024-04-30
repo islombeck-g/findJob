@@ -10,6 +10,7 @@ import SwiftUI
 struct IntroductionView: View {
     @StateObject var userStateManager = UserStateManager.shared
     @State private var shouldNavigateToTabView = false
+    @EnvironmentObject var localizationService: LocalizationService
     var body: some View {
         NavigationStack {
             ZStack {
@@ -48,7 +49,37 @@ struct IntroductionView: View {
                                        text:  Localizable.registration.localized)
                         }
                     }
-                    
+                    Group {
+                        Menu {
+                            
+                            Button {
+                                localizationService.selectedLanguage = .en
+                            } label: {
+                                Label("English", image: "en")
+                            }
+                            Button {
+                                localizationService.selectedLanguage = .ru
+                            } label: {
+                                Label("Русский", image: "ru")
+                            }
+                            Button {
+                                localizationService.selectedLanguage = .uz
+                            } label: {
+                                Label("Uzbek", image: "uz")
+                            }
+                            
+                        } label: {
+                            HStack {
+                                Spacer()
+                                Image(systemName: "globe.europe.africa.fill")
+                                    .font(.system(size: 28))
+                                    .fontWeight(.bold)
+                                Spacer()
+                                    .frame(width: 16)
+                            }
+                            
+                        }
+                    }
                 }
                 .navigationBarBackButtonHidden(true)
             }

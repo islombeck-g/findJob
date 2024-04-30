@@ -33,10 +33,10 @@ final class VacancyBoardViewModel: VacancyBoardViewModelProtocol {
         }
     }
     
-    func applyResume(_ job: Job) {
+    func applyResume(_ job: Job, _ cv: CvData) {
         let userID = UserStateManager.shared.currentUser!.id
         print("tap to button")
-        MessangerServiceFromFirebase.shared.startChat(userId: userID, companyId: job.companyId, vacancyId: job.id, vacancyName: job.position, firstMessageText: "я бы хотел откликнуться на вакансию") { result, error in     
+        MessangerServiceFromFirebase.shared.startChat(userId: userID, companyId: job.companyId, vacancyId: job.id, vacancyName: job.position, cvId: cv.id, firstMessageText: "я бы хотел откликнуться на вакансию") { result, error in     
         }
     }
 }
@@ -47,5 +47,5 @@ protocol VacancyBoardViewModelProtocol: ObservableObject {
     var isFavouriteList: Bool { get set }
     var searchText: String { get set }
     var filteredJobs: [Job] { get }
-    func applyResume(_ job: Job)
+    func applyResume(_ job: Job,_ vc: CvData)
 }

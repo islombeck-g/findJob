@@ -124,15 +124,20 @@ extension Localizable {
     }
 }
 
-final class LocalizationService {
+final class LocalizationService: ObservableObject {
     static let language = "language"
     static let shared = LocalizationService()
     var selectedLanguage: Language {
-        guard let languageString = UserDefaults.standard.string(forKey: LocalizationService.language) else {
-            return Language.currentLanguage
+            get {
+                guard let languageString = UserDefaults.standard.string(forKey: LocalizationService.language) else {
+                    return Language.currentLanguage
+                }
+                return Language(rawValue: languageString) ?? Language.currentLanguage
+            }
+            set {
+                UserDefaults.standard.set(newValue.rawValue, forKey: LocalizationService.language)
+            }
         }
-        return Language(rawValue: languageString) ?? Language.currentLanguage
-    }
 }
 
 enum Language: String, CaseIterable {

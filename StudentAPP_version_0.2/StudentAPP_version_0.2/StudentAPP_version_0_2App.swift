@@ -13,6 +13,7 @@ struct StudentAPP_version_0_2App: App {
     
     @StateObject var userStateManager = UserStateManager.shared
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @EnvironmentObject var localizationService: LocalizationService
     
     var body: some Scene {
         WindowGroup {
@@ -22,7 +23,8 @@ struct StudentAPP_version_0_2App: App {
                 ViewFactory.build(.introductionView)
             }
         }
-        .environment(\.locale, Locale.init(identifier: "ru"))
+//        .environment(\.locale, Locale.init(identifier: "ru"))
+        .environmentObject(LocalizationService.shared)
     }
 }
 

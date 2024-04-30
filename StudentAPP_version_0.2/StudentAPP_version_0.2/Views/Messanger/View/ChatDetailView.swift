@@ -52,17 +52,12 @@ struct ChatDetailView: View {
 
     private func sendMessage() {
         guard !newMessageText.isEmpty else { return }
-        MessangerServiceFromFirebase.shared.startChat(
-            userId: "currentUserId", // This should be dynamically set
-            companyId: chat.companyId,
-            vacancyId: chat.vacancyId,
-            vacancyName: chat.vacancyName,
-            firstMessageText: newMessageText) { success, error in
-                if success {
-                    self.newMessageText = ""
-                } else {
-                    print("Error sending message: \(error?.localizedDescription ?? "Unknown error")")
-                }
+        MessangerServiceFromFirebase.shared.sendMessage(toJobApplicationId: chat.id.uuidString, text: newMessageText) { success, error in
+            if success {
+                self.newMessageText = ""
+            } else {
+                print("Error sending message: \(error?.localizedDescription ?? "Unknown error")")
             }
+        }
     }
 }

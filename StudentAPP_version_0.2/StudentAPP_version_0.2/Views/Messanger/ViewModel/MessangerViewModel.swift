@@ -32,9 +32,9 @@ final class MessangerViewModel: MessangerViewModelProtocol {
         }
     }
     
-    func startChat(userId: String, companyId: String, vacancyId: String, vacancyName: String, firstMessageText: String?) {
+    func startChat(userId: String, companyId: String, vacancyId: String, vacancyName: String, cvId: String, firstMessageText: String?) {
         isLoading = true
-        messangerService.startChat(userId: userId, companyId: companyId, vacancyId: vacancyId, vacancyName: vacancyName, firstMessageText: firstMessageText) { [weak self] success, error in
+        messangerService.startChat(userId: userId, companyId: companyId, vacancyId: vacancyId, vacancyName: vacancyName, cvId: cvId, firstMessageText: firstMessageText) { [weak self] success, error in
             self?.isLoading = false
             if let error = error {
                 self?.errorMessage = error.localizedDescription

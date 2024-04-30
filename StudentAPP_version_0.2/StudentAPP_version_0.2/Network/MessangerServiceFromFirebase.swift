@@ -44,7 +44,7 @@ class MessangerServiceFromFirebase: ObservableObject {
         }
     }
     
-    func startChat(userId: String, companyId: String, vacancyId: String, vacancyName: String, firstMessageText: String?, completion: @escaping (Bool, Error?) -> Void) {
+    func startChat(userId: String, companyId: String, vacancyId: String, vacancyName: String, cvId: String, firstMessageText: String?, completion: @escaping (Bool, Error?) -> Void) {
         
         let newJobApplicationRef = jobApplicationsRef.childByAutoId()
         let newJobApplicationId = newJobApplicationRef.key!
@@ -56,6 +56,7 @@ class MessangerServiceFromFirebase: ObservableObject {
             "companyId": companyId,
             "vacancyId": vacancyId,
             "vacancyName": vacancyName,
+            "cvId": cvId,
             "status": "open"  // предполагаем, что статус открыт с начала
         ]
         
@@ -85,6 +86,24 @@ class MessangerServiceFromFirebase: ObservableObject {
             }
         }
     }
+    
+    func sendMessage(toJobApplicationId: String, text: String, completion: @escaping (Bool, Error?) -> Void) {
+        let messagesRef = messagesRef.child(toJobApplicationId)
+        let newMessageRef = messagesRef.childByAutoId()
+        let timestamp = Int(Date().timeIntervalSince1970 * 1000)
+        let messageData = [
+            "senderId": "currentUserId", // This should be dynamically set
+            "text": text,
+            "timestamp": timestamp
+        ] as [String : Any]
+        newMessageRef.setValue(messageData) { error, _ in
+            if let error = error {
+                completion(false, error)
+            } else {
+                completion(true, nil)
+            }
+        }
+    }
 }
 
 class JobApplication: NSObject, Identifiable, ObservableObject {
@@ -94,6 +113,7 @@ class JobApplication: NSObject, Identifiable, ObservableObject {
     var vacancyId: String
     var vacancyName: String
     var status: String
+    var cvId: String
     var messages: [Message]
     
     init(snapshot: DataSnapshot) {
@@ -103,6 +123,7 @@ class JobApplication: NSObject, Identifiable, ObservableObject {
         vacancyId = dict["vacancyId"] as! String
         vacancyName = dict["vacancyName"] as! String
         status = dict["status"] as! String
+        cvId = dict["cvId"] as! String
         messages = []
     }
 }

@@ -26,8 +26,9 @@ struct MessangerViewList<ViewModel>: View where ViewModel: MessangerViewModelPro
                             NavigationLink {
                                 ChatDetailView(chat: chat)
                             } label: {
-                                Text(chat.vacancyName)
+                                ChatOverView(chat: chat)
                             }
+                            .padding(.horizontal, 16)
                         }
                     }
                 }
