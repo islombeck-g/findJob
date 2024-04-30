@@ -33,9 +33,9 @@
 "LAST_NAME" = "Фамилия";
 "FIRST_NAME" = "Имя";
 "MIDDLE_NAME" = "Отчество";
-"REQUIRED_EXPERIENCE" = "Требуемый опыт работы: %lld лет";
+"REQUIRED_EXPERIENCE" = "Требуемый опыт работы";
 "EMPLOYMENT" = "Тип занятости: %@";
-"COMPANY" = "Компания: %@";
+"COMPANY" = "Компания";
 "INDUSTRY" = "Индустрия";
 "EMPLOYMENT_TYPE" = "Тип занятости";
 "LOCATION" = "Местоположение";

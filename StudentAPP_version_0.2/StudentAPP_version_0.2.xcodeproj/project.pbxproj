@@ -19,6 +19,11 @@
 		6301B2D22BDFD13000D02FD8 /* MainTextFieldNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2D12BDFD13000D02FD8 /* MainTextFieldNumbers.swift */; };
 		6301B2D42BE01C3800D02FD8 /* CvFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2D32BE01C3800D02FD8 /* CvFullView.swift */; };
 		6301B2D62BE01D0000D02FD8 /* CvScrollInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2D52BE01D0000D02FD8 /* CvScrollInfoForm.swift */; };
+		63428E652BE0D2F7003F46ED /* VacancyOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E642BE0D2F7003F46ED /* VacancyOverView.swift */; };
+		63555F5D2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63555F5C2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift */; };
+		63555F632BE04BC1008C3CEA /* VacancyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63555F622BE04BC1008C3CEA /* VacancyBoardViewModel.swift */; };
+		63555F662BE04C97008C3CEA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63555F652BE04C97008C3CEA /* SearchBar.swift */; };
+		63555F682BE04DD9008C3CEA /* VacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63555F672BE04DD9008C3CEA /* VacancyModel.swift */; };
 		6383A5C92BDD85B000F530EB /* StudentAPP_version_0_2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383A5C82BDD85B000F530EB /* StudentAPP_version_0_2App.swift */; };
 		6383A5CD2BDD85B100F530EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6383A5CC2BDD85B100F530EB /* Assets.xcassets */; };
 		6383A5D02BDD85B100F530EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6383A5CF2BDD85B100F530EB /* Preview Assets.xcassets */; };
@@ -92,6 +97,11 @@
 		6301B2D12BDFD13000D02FD8 /* MainTextFieldNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextFieldNumbers.swift; sourceTree = "<group>"; };
 		6301B2D32BE01C3800D02FD8 /* CvFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvFullView.swift; sourceTree = "<group>"; };
 		6301B2D52BE01D0000D02FD8 /* CvScrollInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvScrollInfoForm.swift; sourceTree = "<group>"; };
+		63428E642BE0D2F7003F46ED /* VacancyOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyOverView.swift; sourceTree = "<group>"; };
+		63555F5C2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyServiceFromFirebase.swift; sourceTree = "<group>"; };
+		63555F622BE04BC1008C3CEA /* VacancyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyBoardViewModel.swift; sourceTree = "<group>"; };
+		63555F652BE04C97008C3CEA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		63555F672BE04DD9008C3CEA /* VacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyModel.swift; sourceTree = "<group>"; };
 		6383A5C52BDD85B000F530EB /* StudentAPP_version_0.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentAPP_version_0.2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6383A5C82BDD85B000F530EB /* StudentAPP_version_0_2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAPP_version_0_2App.swift; sourceTree = "<group>"; };
 		6383A5CC2BDD85B100F530EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -214,6 +224,39 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		63555F5E2BE04B72008C3CEA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63555F622BE04BC1008C3CEA /* VacancyBoardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		63555F5F2BE04B80008C3CEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63555F672BE04DD9008C3CEA /* VacancyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63555F602BE04B8D008C3CEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6383A6312BDE253200F530EB /* VacancyBoardView.swift */,
+				63428E642BE0D2F7003F46ED /* VacancyOverView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63555F642BE04C7D008C3CEA /* SearchTextField */ = {
+			isa = PBXGroup;
+			children = (
+				63555F652BE04C97008C3CEA /* SearchBar.swift */,
+			);
+			path = SearchTextField;
+			sourceTree = "<group>";
+		};
 		6383A5BC2BDD85AF00F530EB = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +357,7 @@
 		6383A6002BDD933B00F530EB /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				63555F642BE04C7D008C3CEA /* SearchTextField */,
 				6383A6242BDDAE3D00F530EB /* TextViews */,
 				6383A6162BDDA15300F530EB /* DropDownMenu */,
 				6383A60F2BDD9F1F00F530EB /* TextFields */,
@@ -444,8 +488,10 @@
 		6383A6302BDE251300F530EB /* VacancyBoard */ = {
 			isa = PBXGroup;
 			children = (
-				6383A6312BDE253200F530EB /* VacancyBoardView.swift */,
 				6383A6332BDE254200F530EB /* VacancyBoardViewBuilder.swift */,
+				63555F602BE04B8D008C3CEA /* View */,
+				63555F5F2BE04B80008C3CEA /* Model */,
+				63555F5E2BE04B72008C3CEA /* ViewModel */,
 			);
 			path = VacancyBoard;
 			sourceTree = "<group>";
@@ -491,6 +537,7 @@
 			children = (
 				63D1D34A2BDE62A400F0BCBF /* ProfileServiceFromFirebase.swift */,
 				6301B2BC2BDFAB8200D02FD8 /* ResumeServiceFromFirebase.swift */,
+				63555F5C2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -603,8 +650,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6301B2D02BDFD02800D02FD8 /* CvCreateViewTextFieldItems.swift in Sources */,
+				63428E652BE0D2F7003F46ED /* VacancyOverView.swift in Sources */,
 				6383A6222BDDA78100F530EB /* SignInEnterDataForm.swift in Sources */,
 				6383A5F22BDD89D500F530EB /* SignInView.swift in Sources */,
+				63555F632BE04BC1008C3CEA /* VacancyBoardViewModel.swift in Sources */,
 				63D85C3A2BDEC879002A1EA6 /* Localizable.swift in Sources */,
 				6383A62F2BDE22C800F530EB /* MainTabView.swift in Sources */,
 				6383A5E62BDD87E800F530EB /* ViewFactory.swift in Sources */,
@@ -619,6 +668,7 @@
 				63D85C372BDEC144002A1EA6 /* EditProfileItemsView.swift in Sources */,
 				6383A6182BDDA16700F530EB /* DropDownMenuView.swift in Sources */,
 				6301B2CE2BDFCF9E00D02FD8 /* CvCreateView.swift in Sources */,
+				63555F662BE04C97008C3CEA /* SearchBar.swift in Sources */,
 				6383A61E2BDDA2DF00F530EB /* CreateAccountUserData.swift in Sources */,
 				6383A6362BDE25E100F530EB /* MainTabViewBuilder.swift in Sources */,
 				6301B2D62BE01D0000D02FD8 /* CvScrollInfoForm.swift in Sources */,
@@ -627,6 +677,7 @@
 				6383A6342BDE254200F530EB /* VacancyBoardViewBuilder.swift in Sources */,
 				6383A62A2BDDAFCC00F530EB /* CustomSizeText.swift in Sources */,
 				6383A6152BDDA12800F530EB /* DataConstants.swift in Sources */,
+				63555F682BE04DD9008C3CEA /* VacancyModel.swift in Sources */,
 				6383A5E92BDD892300F530EB /* CreateAccountView.swift in Sources */,
 				6301B2C12BDFAC0200D02FD8 /* CVListView.swift in Sources */,
 				6383A6112BDD9F3800F530EB /* MainTextField.swift in Sources */,
@@ -657,6 +708,7 @@
 				63D85C352BDEC002002A1EA6 /* CircleImage.swift in Sources */,
 				6383A6462BDE379500F530EB /* CircleImageForm.swift in Sources */,
 				6383A5EC2BDD894B00F530EB /* CreateAccountViewBuilder.swift in Sources */,
+				63555F5D2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift in Sources */,
 				6301B2CA2BDFB47800D02FD8 /* CvData.swift in Sources */,
 				6301B2BB2BDFA28300D02FD8 /* SubmitButton.swift in Sources */,
 				6301B2D22BDFD13000D02FD8 /* MainTextFieldNumbers.swift in Sources */,

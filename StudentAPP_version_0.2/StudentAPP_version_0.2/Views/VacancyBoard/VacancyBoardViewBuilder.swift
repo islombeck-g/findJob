@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VacancyBoardViewBuilder {
     static func build() -> some View {
-//        let viewModel = SignInViewModel()
-        return VacancyBoardView()
+        let viewModel = VacancyBoardViewModel()
+        return VacancyBoardView(viewModel: viewModel)
     }
 }
