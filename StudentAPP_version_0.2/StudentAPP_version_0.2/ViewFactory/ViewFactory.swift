@@ -64,7 +64,7 @@ struct ViewFactory {
     @ViewBuilder static func build(_ module: ResponseModule) -> some View {
         switch module {
         case .response:
-            ResponseViewBuilder.build()
+            MessangerViewListBuilder.build()
         }
     }
 }

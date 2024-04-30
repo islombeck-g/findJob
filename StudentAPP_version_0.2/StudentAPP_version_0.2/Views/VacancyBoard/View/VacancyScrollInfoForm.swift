@@ -82,17 +82,3 @@ struct VacancyScrollInfoForm: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
-
-#Preview {
-    VacancyScrollInfoForm(vc: Job(
-        id: "1",
-        activity: "Юриспрюденция",
-        nameOfCompany: "Газпром нефть",
-        position: "Юрист",
-        jobType: "Полный день",
-        experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
-        location: "Центр Казани",
-        money: "от 40 000 до 120 000",
-        description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
-        minExperience: 2))
-}

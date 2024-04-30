@@ -19,18 +19,14 @@ final class VacancyServiceFromFirebase: ObservableObject {
     }
     
     func get() {
-        print(1)
         fetchJobs { result in
             DispatchQueue.main.async {
                 self.jobs = result
-                print(self.jobs)
-                print(10)
             }
         }
     }
     
    private func fetchJobs(completion: @escaping ([Job]) -> Void) {
-       print(2)
         db.collection("jobs").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -42,11 +38,11 @@ final class VacancyServiceFromFirebase: ObservableObject {
             var jobs = [Job]()
             
             for document in querySnapshot!.documents {
-                print(5)
                 let data = document.data()
                 
                 if let activity = data["activity"] as? String, // +
                    let nameOfCompany = data["nameOfCompany"] as? String,
+                   let companyId = data["companyId"] as? String,
                    let position = data["position"] as? String,
                    let jobType = data["jobType"] as? String,
                    let location = data["location"] as? String,
@@ -61,14 +57,11 @@ final class VacancyServiceFromFirebase: ObservableObject {
                                 experience.append(experienceItem)
                             }
                         }
-                        
-                        print(6)
-                        let job = Job(id: document.documentID, activity: activity, nameOfCompany: nameOfCompany, position: position, jobType: jobType, experience: experience, location: location, money: money, description: description, minExperience: minExperience)
+                        let job = Job(id: document.documentID, activity: activity, nameOfCompany: nameOfCompany, companyId: companyId, position: position, jobType: jobType, experience: experience, location: location, money: money, description: description, minExperience: minExperience)
                         jobs.append(job)
                     }
                 }
             }
-            print(7)
             completion(jobs)
         }
     }

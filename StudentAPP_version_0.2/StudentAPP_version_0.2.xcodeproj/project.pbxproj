@@ -22,6 +22,14 @@
 		63428E652BE0D2F7003F46ED /* VacancyOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E642BE0D2F7003F46ED /* VacancyOverView.swift */; };
 		63428E672BE0EB50003F46ED /* VacancyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E662BE0EB50003F46ED /* VacancyDetailView.swift */; };
 		63428E692BE0EB64003F46ED /* VacancyScrollInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E682BE0EB64003F46ED /* VacancyScrollInfoForm.swift */; };
+		63428E6B2BE0FB37003F46ED /* MessangerServiceFromFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E6A2BE0FB37003F46ED /* MessangerServiceFromFirebase.swift */; };
+		63428E6E2BE0FB81003F46ED /* MessangerViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E6D2BE0FB81003F46ED /* MessangerViewList.swift */; };
+		63428E702BE0FB8D003F46ED /* MessangerViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E6F2BE0FB8D003F46ED /* MessangerViewBuilder.swift */; };
+		63428E722BE0FBBA003F46ED /* MessangerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E712BE0FBBA003F46ED /* MessangerViewModel.swift */; };
+		63428E742BE0FCB7003F46ED /* MessangerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E732BE0FCB7003F46ED /* MessangerModel.swift */; };
+		63428E792BE0FFD9003F46ED /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 63428E782BE0FFD9003F46ED /* FirebaseDatabase */; };
+		63428E7B2BE0FFD9003F46ED /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 63428E7A2BE0FFD9003F46ED /* FirebaseDatabaseSwift */; };
+		63428E7D2BE11148003F46ED /* ChatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E7C2BE11148003F46ED /* ChatDetailView.swift */; };
 		63555F5D2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63555F5C2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift */; };
 		63555F632BE04BC1008C3CEA /* VacancyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63555F622BE04BC1008C3CEA /* VacancyBoardViewModel.swift */; };
 		63555F662BE04C97008C3CEA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63555F652BE04C97008C3CEA /* SearchBar.swift */; };
@@ -102,6 +110,12 @@
 		63428E642BE0D2F7003F46ED /* VacancyOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyOverView.swift; sourceTree = "<group>"; };
 		63428E662BE0EB50003F46ED /* VacancyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyDetailView.swift; sourceTree = "<group>"; };
 		63428E682BE0EB64003F46ED /* VacancyScrollInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyScrollInfoForm.swift; sourceTree = "<group>"; };
+		63428E6A2BE0FB37003F46ED /* MessangerServiceFromFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessangerServiceFromFirebase.swift; sourceTree = "<group>"; };
+		63428E6D2BE0FB81003F46ED /* MessangerViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessangerViewList.swift; sourceTree = "<group>"; };
+		63428E6F2BE0FB8D003F46ED /* MessangerViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessangerViewBuilder.swift; sourceTree = "<group>"; };
+		63428E712BE0FBBA003F46ED /* MessangerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessangerViewModel.swift; sourceTree = "<group>"; };
+		63428E732BE0FCB7003F46ED /* MessangerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessangerModel.swift; sourceTree = "<group>"; };
+		63428E7C2BE11148003F46ED /* ChatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailView.swift; sourceTree = "<group>"; };
 		63555F5C2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyServiceFromFirebase.swift; sourceTree = "<group>"; };
 		63555F622BE04BC1008C3CEA /* VacancyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyBoardViewModel.swift; sourceTree = "<group>"; };
 		63555F652BE04C97008C3CEA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -166,12 +180,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63428E7B2BE0FFD9003F46ED /* FirebaseDatabaseSwift in Frameworks */,
 				6383A5E02BDD874500F530EB /* FirebaseAnalyticsSwift in Frameworks */,
 				6383A5DC2BDD874500F530EB /* FirebaseAnalytics in Frameworks */,
 				6383A5DE2BDD874500F530EB /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				6383A5FB2BDD8E4A00F530EB /* FirebaseFirestoreSwift in Frameworks */,
 				6383A5E42BDD874500F530EB /* FirebaseAppCheck in Frameworks */,
 				6383A5E22BDD874500F530EB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				63428E792BE0FFD9003F46ED /* FirebaseDatabase in Frameworks */,
 				6383A5F92BDD8E4200F530EB /* FirebaseFirestore in Frameworks */,
 				6383A5FD2BDD8EAA00F530EB /* FirebaseAuth in Frameworks */,
 			);
@@ -224,6 +240,42 @@
 			isa = PBXGroup;
 			children = (
 				6301B2C92BDFB47800D02FD8 /* CvData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63428E6C2BE0FB6B003F46ED /* Messanger */ = {
+			isa = PBXGroup;
+			children = (
+				63428E6F2BE0FB8D003F46ED /* MessangerViewBuilder.swift */,
+				63428E752BE0FD2E003F46ED /* View */,
+				63428E772BE0FD38003F46ED /* Model */,
+				63428E762BE0FD33003F46ED /* ViewModel */,
+			);
+			path = Messanger;
+			sourceTree = "<group>";
+		};
+		63428E752BE0FD2E003F46ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63428E6D2BE0FB81003F46ED /* MessangerViewList.swift */,
+				63428E7C2BE11148003F46ED /* ChatDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63428E762BE0FD33003F46ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63428E712BE0FBBA003F46ED /* MessangerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		63428E772BE0FD38003F46ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63428E732BE0FCB7003F46ED /* MessangerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,6 +362,7 @@
 		6383A5E72BDD88CC00F530EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63428E6C2BE0FB6B003F46ED /* Messanger */,
 				6301B2BF2BDFABF300D02FD8 /* CV */,
 				6383A63D2BDE28CA00F530EB /* Profile */,
 				6383A6372BDE272B00F530EB /* Response */,
@@ -544,6 +597,7 @@
 				63D1D34A2BDE62A400F0BCBF /* ProfileServiceFromFirebase.swift */,
 				6301B2BC2BDFAB8200D02FD8 /* ResumeServiceFromFirebase.swift */,
 				63555F5C2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift */,
+				63428E6A2BE0FB37003F46ED /* MessangerServiceFromFirebase.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -593,6 +647,8 @@
 				6383A5F82BDD8E4200F530EB /* FirebaseFirestore */,
 				6383A5FA2BDD8E4A00F530EB /* FirebaseFirestoreSwift */,
 				6383A5FC2BDD8EAA00F530EB /* FirebaseAuth */,
+				63428E782BE0FFD9003F46ED /* FirebaseDatabase */,
+				63428E7A2BE0FFD9003F46ED /* FirebaseDatabaseSwift */,
 			);
 			productName = StudentAPP_version_0.2;
 			productReference = 6383A5C52BDD85B000F530EB /* StudentAPP_version_0.2.app */;
@@ -657,9 +713,11 @@
 			files = (
 				6301B2D02BDFD02800D02FD8 /* CvCreateViewTextFieldItems.swift in Sources */,
 				63428E652BE0D2F7003F46ED /* VacancyOverView.swift in Sources */,
+				63428E6B2BE0FB37003F46ED /* MessangerServiceFromFirebase.swift in Sources */,
 				6383A6222BDDA78100F530EB /* SignInEnterDataForm.swift in Sources */,
 				6383A5F22BDD89D500F530EB /* SignInView.swift in Sources */,
 				63555F632BE04BC1008C3CEA /* VacancyBoardViewModel.swift in Sources */,
+				63428E722BE0FBBA003F46ED /* MessangerViewModel.swift in Sources */,
 				63D85C3A2BDEC879002A1EA6 /* Localizable.swift in Sources */,
 				6383A62F2BDE22C800F530EB /* MainTabView.swift in Sources */,
 				6383A5E62BDD87E800F530EB /* ViewFactory.swift in Sources */,
@@ -706,17 +764,21 @@
 				6383A6032BDD936F00F530EB /* NavigationBackButton.swift in Sources */,
 				6301B2C72BDFAC7300D02FD8 /* CVViewModel.swift in Sources */,
 				63D85C332BDEBF92002A1EA6 /* EditAccountInfoView.swift in Sources */,
+				63428E7D2BE11148003F46ED /* ChatDetailView.swift in Sources */,
 				6383A6442BDE362300F530EB /* ProfileViewModel.swift in Sources */,
 				6383A64D2BDE453200F530EB /* NotificationManager.swift in Sources */,
 				63C60EFA2BDE9A6B00561151 /* Title2Text.swift in Sources */,
 				6383A60C2BDD9BC600F530EB /* FIOEnterField.swift in Sources */,
+				63428E702BE0FB8D003F46ED /* MessangerViewBuilder.swift in Sources */,
 				63D1D3482BDE5A3700F0BCBF /* SecuredEnterField.swift in Sources */,
 				6383A6412BDE28E900F530EB /* ProfileView.swift in Sources */,
 				63428E692BE0EB64003F46ED /* VacancyScrollInfoForm.swift in Sources */,
 				63D85C352BDEC002002A1EA6 /* CircleImage.swift in Sources */,
 				6383A6462BDE379500F530EB /* CircleImageForm.swift in Sources */,
+				63428E742BE0FCB7003F46ED /* MessangerModel.swift in Sources */,
 				6383A5EC2BDD894B00F530EB /* CreateAccountViewBuilder.swift in Sources */,
 				63555F5D2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift in Sources */,
+				63428E6E2BE0FB81003F46ED /* MessangerViewList.swift in Sources */,
 				6301B2CA2BDFB47800D02FD8 /* CvData.swift in Sources */,
 				6301B2BB2BDFA28300D02FD8 /* SubmitButton.swift in Sources */,
 				6301B2D22BDFD13000D02FD8 /* MainTextFieldNumbers.swift in Sources */,
@@ -953,6 +1015,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		63428E782BE0FFD9003F46ED /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6383A5DA2BDD874500F530EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		63428E7A2BE0FFD9003F46ED /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6383A5DA2BDD874500F530EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
 		6383A5DB2BDD874500F530EB /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6383A5DA2BDD874500F530EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

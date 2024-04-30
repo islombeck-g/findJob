@@ -10,6 +10,7 @@ import SwiftUI
 struct VacancyDetailView: View {
     let vc:Job
     @State var isFavorite: Bool = false
+    let action: (_ job: Job) -> ()
     var body: some View {
         VStack {
             ZStack {
@@ -25,9 +26,8 @@ struct VacancyDetailView: View {
                         Spacer()
                             .frame(height: 25)
                         Button{
-                            
+                            action(vc)
                         } label: {
-                            
                             Text("Откликнутся")
                                 .foregroundStyle(.white)
                                 .frame(maxWidth: .infinity)

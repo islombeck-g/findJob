@@ -59,7 +59,7 @@ struct VacancyBoardView<ViewModel>: View where ViewModel: VacancyBoardViewModelP
                             
                             ForEach(viewModel.favouriteListOfVacancy){ job in
                                 NavigationLink {
-                                    VacancyDetailView(vc: job, isFavorite: false)
+                                    VacancyDetailView(vc: job, isFavorite: false, action: viewModel.applyResume)
                                 } label: {
                                     VacancyOverView(vc: job)
                                 }
@@ -72,7 +72,7 @@ struct VacancyBoardView<ViewModel>: View where ViewModel: VacancyBoardViewModelP
                                     LazyHStack {
                                         ForEach(viewModel.filteredJobs) { job in
                                             NavigationLink {
-                                                VacancyDetailView(vc: job, isFavorite: false)
+                                                VacancyDetailView(vc: job, isFavorite: false, action: viewModel.applyResume)
                                             } label: {
                                                 VacancyOverView(vc: job)
                                             }
@@ -91,7 +91,7 @@ struct VacancyBoardView<ViewModel>: View where ViewModel: VacancyBoardViewModelP
                             
                             ForEach(viewModel.filteredJobs){ job in
                                 NavigationLink {
-                                    VacancyDetailView(vc: job, isFavorite: false)
+                                    VacancyDetailView(vc: job, isFavorite: false, action: viewModel.applyResume)
                                 } label: {
                                     VacancyOverView(vc: job)
                                 }

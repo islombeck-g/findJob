@@ -58,4 +58,6 @@ struct DataConstants {
                                      workExperience: "",
                                      employmentType: "",
                                      aboutMe: "")
+    
+        
 }
