@@ -20,6 +20,8 @@
 		6301B2D42BE01C3800D02FD8 /* CvFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2D32BE01C3800D02FD8 /* CvFullView.swift */; };
 		6301B2D62BE01D0000D02FD8 /* CvScrollInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301B2D52BE01D0000D02FD8 /* CvScrollInfoForm.swift */; };
 		63428E652BE0D2F7003F46ED /* VacancyOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E642BE0D2F7003F46ED /* VacancyOverView.swift */; };
+		63428E672BE0EB50003F46ED /* VacancyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E662BE0EB50003F46ED /* VacancyDetailView.swift */; };
+		63428E692BE0EB64003F46ED /* VacancyScrollInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63428E682BE0EB64003F46ED /* VacancyScrollInfoForm.swift */; };
 		63555F5D2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63555F5C2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift */; };
 		63555F632BE04BC1008C3CEA /* VacancyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63555F622BE04BC1008C3CEA /* VacancyBoardViewModel.swift */; };
 		63555F662BE04C97008C3CEA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63555F652BE04C97008C3CEA /* SearchBar.swift */; };
@@ -98,6 +100,8 @@
 		6301B2D32BE01C3800D02FD8 /* CvFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvFullView.swift; sourceTree = "<group>"; };
 		6301B2D52BE01D0000D02FD8 /* CvScrollInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvScrollInfoForm.swift; sourceTree = "<group>"; };
 		63428E642BE0D2F7003F46ED /* VacancyOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyOverView.swift; sourceTree = "<group>"; };
+		63428E662BE0EB50003F46ED /* VacancyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyDetailView.swift; sourceTree = "<group>"; };
+		63428E682BE0EB64003F46ED /* VacancyScrollInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyScrollInfoForm.swift; sourceTree = "<group>"; };
 		63555F5C2BE04B13008C3CEA /* VacancyServiceFromFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyServiceFromFirebase.swift; sourceTree = "<group>"; };
 		63555F622BE04BC1008C3CEA /* VacancyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyBoardViewModel.swift; sourceTree = "<group>"; };
 		63555F652BE04C97008C3CEA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 			children = (
 				6383A6312BDE253200F530EB /* VacancyBoardView.swift */,
 				63428E642BE0D2F7003F46ED /* VacancyOverView.swift */,
+				63428E662BE0EB50003F46ED /* VacancyDetailView.swift */,
+				63428E682BE0EB64003F46ED /* VacancyScrollInfoForm.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 				6383A6282BDDAF9E00F530EB /* TabText.swift in Sources */,
 				6301B2CC2BDFB80C00D02FD8 /* CvOverForm.swift in Sources */,
 				63C60EFC2BDE9A8D00561151 /* Title3Text.swift in Sources */,
+				63428E672BE0EB50003F46ED /* VacancyDetailView.swift in Sources */,
 				6383A62C2BDDB26900F530EB /* Title1Text.swift in Sources */,
 				6301B2D42BE01C3800D02FD8 /* CvFullView.swift in Sources */,
 				6383A63B2BDE275E00F530EB /* ResponseViewBuilder.swift in Sources */,
@@ -705,6 +712,7 @@
 				6383A60C2BDD9BC600F530EB /* FIOEnterField.swift in Sources */,
 				63D1D3482BDE5A3700F0BCBF /* SecuredEnterField.swift in Sources */,
 				6383A6412BDE28E900F530EB /* ProfileView.swift in Sources */,
+				63428E692BE0EB64003F46ED /* VacancyScrollInfoForm.swift in Sources */,
 				63D85C352BDEC002002A1EA6 /* CircleImage.swift in Sources */,
 				6383A6462BDE379500F530EB /* CircleImageForm.swift in Sources */,
 				6383A5EC2BDD894B00F530EB /* CreateAccountViewBuilder.swift in Sources */,

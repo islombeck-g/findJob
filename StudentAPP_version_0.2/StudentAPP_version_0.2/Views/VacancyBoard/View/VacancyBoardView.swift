@@ -12,13 +12,14 @@ struct VacancyBoardView<ViewModel>: View where ViewModel: VacancyBoardViewModelP
     @StateObject var viewModel: ViewModel
     @State var isFavouriteList = false
     var body: some View {
-        ZStack {
-            
-            Color("ForegroundColor")
-                .ignoresSafeArea()
-            
-            VStack {
-                HStack {
+        NavigationStack {
+            ZStack {
+                
+                Color("ForegroundColor")
+                    .ignoresSafeArea()
+                
+                VStack {
+                    HStack {
                         Button {
                             //sort items
                         } label: {
@@ -35,7 +36,7 @@ struct VacancyBoardView<ViewModel>: View where ViewModel: VacancyBoardViewModelP
                         
                         Button {
                             withAnimation(.spring) {
-//                                self.presenter.isFavouriteList.toggle()
+                                viewModel.isFavouriteList.toggle()
                             }
                         }label: {
                             Image(systemName: isFavouriteList == true ?  "star.fill" : "star")
@@ -43,66 +44,61 @@ struct VacancyBoardView<ViewModel>: View where ViewModel: VacancyBoardViewModelP
                                 .foregroundStyle(Color("SecondaryColor"))
                         }
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                }
-                .padding(.horizontal, 16)
-                
-                ScrollView {
-                    SearchBar(text: self.$viewModel.searchText)
-                        .padding(.horizontal)
-                        .padding(.top, 5)
+                    }
+                    .padding(.horizontal, 16)
                     
-                    if viewModel.isFavouriteList == true {
+                    ScrollView {
+                        SearchBar(text: self.$viewModel.searchText)
+                            .padding(.horizontal)
+                            .padding(.top, 5)
                         
-                        Spacer()
-                            .frame(height: 15)
-                        
-                        ForEach(viewModel.favouriteListOfVacancy){ job in
-                            NavigationLink {
-                               
-                            } label: {
-                                VacancyOverView(vc: job)
-                            }
-                            .padding(.horizontal, 16)
-                        }
-                        .listStyle(.inset)
-                    } else {
-                        
-                        if viewModel.searchText == "" {
+                        if viewModel.isFavouriteList == true {
                             
-                            ScrollView(.horizontal) {
-                                
-                                LazyHStack {
-                                    
-                                    ForEach(viewModel.filteredJobs) { job in
-                                        
-                                        NavigationLink {
-
-                                        } label: {
-                                            VacancyOverView(vc: job)
-                                        }
-                                        .shadow(radius: 10)
-                                    }
-                                    .scrollTargetLayout()
+                            Spacer()
+                                .frame(height: 15)
+                            
+                            ForEach(viewModel.favouriteListOfVacancy){ job in
+                                NavigationLink {
+                                    VacancyDetailView(vc: job, isFavorite: false)
+                                } label: {
+                                    VacancyOverView(vc: job)
                                 }
+                                .padding(.horizontal, 16)
                             }
-                            .safeAreaPadding(.vertical, 0)
-                            .frame(height: 200)
-                            .contentMargins(.horizontal, 16, for:.scrollContent)
-                            .scrollIndicators(.hidden)
-                            .scrollClipDisabled()
-                            .scrollTargetBehavior(.paging)
-                        }
-                        
-                        ForEach(viewModel.filteredJobs){ job in
+                            .listStyle(.inset)
+                        } else {
+                            if viewModel.searchText == "" {
+                                ScrollView(.horizontal) {
+                                    LazyHStack {
+                                        ForEach(viewModel.filteredJobs) { job in
+                                            NavigationLink {
+                                                VacancyDetailView(vc: job, isFavorite: false)
+                                            } label: {
+                                                VacancyOverView(vc: job)
+                                            }
+                                            .shadow(radius: 10)
+                                        }
+                                        .scrollTargetLayout()
+                                    }
+                                }
+                                .safeAreaPadding(.vertical, 0)
+                                .frame(height: 200)
+                                .contentMargins(.horizontal, 16, for:.scrollContent)
+                                .scrollIndicators(.hidden)
+                                .scrollClipDisabled()
+                                .scrollTargetBehavior(.paging)
+                            }
                             
-                            NavigationLink {
-                                
-                            } label: {
-                                VacancyOverView(vc: job)
+                            ForEach(viewModel.filteredJobs){ job in
+                                NavigationLink {
+                                    VacancyDetailView(vc: job, isFavorite: false)
+                                } label: {
+                                    VacancyOverView(vc: job)
+                                }
+                                .padding(.horizontal, 16)
                             }
-                            .padding(.horizontal, 16)
+                            //                        .listStyle(.inset)
                         }
-//                        .listStyle(.inset)
                     }
                 }
             }
