@@ -23,7 +23,6 @@ struct StudentAPP_version_0_2App: App {
                 ViewFactory.build(.introductionView)
             }
         }
-//        .environment(\.locale, Locale.init(identifier: "ru"))
         .environmentObject(LocalizationService.shared)
     }
 }

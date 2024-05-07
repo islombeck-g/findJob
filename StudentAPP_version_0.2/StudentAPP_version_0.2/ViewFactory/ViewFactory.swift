@@ -22,7 +22,6 @@ struct ViewFactory {
     
     enum MainModule {
         case vacancyList
-        case vacancyDetail
         case tabView
     }
     
@@ -54,8 +53,6 @@ struct ViewFactory {
         switch module {
         case .vacancyList:
             VacancyBoardViewBuilder.build()
-        case .vacancyDetail:
-            EmptyView()
         case .tabView:
             MainTabViewBuilder.build()
         }

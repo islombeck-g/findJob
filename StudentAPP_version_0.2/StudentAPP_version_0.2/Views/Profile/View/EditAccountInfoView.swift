@@ -37,7 +37,6 @@ struct EditAccountInfoView: View {
                     Button {
                         withAnimation { action(user) }
                     } label: {
-                        
                             Text(Localizable.saveChanges.localized)
                                 .bold()
                                 .frame(maxWidth: .infinity)

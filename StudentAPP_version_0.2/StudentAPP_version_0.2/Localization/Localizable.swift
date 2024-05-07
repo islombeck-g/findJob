@@ -11,14 +11,14 @@ enum Localizable: String {
     
     // MARK: - General
     
-    case hello = "HELLO" //+
-    case talentExchange = "TALENT_EXCHANGE" //+
-    case login = "LOGIN" // +
-    case registration = "REGISTRATION" // +
+    case hello = "HELLO"
+    case talentExchange = "TALENT_EXCHANGE"
+    case login = "LOGIN"
+    case registration = "REGISTRATION"
     case back = "BACK"
     case next = "NEXT"
-    case logInWith = "LOG_IN_WITH" //+
-    case personalInformation = "PERSONAL_INFORMATION" //+
+    case logInWith = "LOG_IN_WITH"
+    case personalInformation = "PERSONAL_INFORMATION"
     case username = "USERNAME"
     case password = "PASSWORD"
     case forgotPassword = "FORGOT_PASSWORD"

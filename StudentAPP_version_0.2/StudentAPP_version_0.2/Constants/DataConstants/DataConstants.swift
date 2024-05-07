@@ -7,6 +7,15 @@
 
 import Foundation
 
+/**
+    Константы приложения
+ 
+    A very long one.
+ # Параметры
+  1. universityes - университеты
+ 2. emptyUserData - пустой пользователь
+ 3. emptyCvData - пустое резюме
+*/
 struct DataConstants {
     
     static let universityes: [ChoseName] = [
